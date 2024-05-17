@@ -9,7 +9,7 @@ const Lenovo = () => {
   return (
     <>
       <div>
-        <img src="/assets/img/sportlight.webp" alt="" />
+        <img src="/assets/img/sportlight.webp" alt="" className='w-full' />
       </div>
 
       <div className="bg-neutral-100  px-16 py-10">
