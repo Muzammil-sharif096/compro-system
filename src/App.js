@@ -8,19 +8,21 @@ import Trackorder from './Components/Trackorder/Trackorder';
 import Aboutus from './Components/AboutUs/Aboutus';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import DetailProduct from './Components/Home/DetailProduct';
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/blog' element={<Blogs />} />
-        <Route path='/trackorder' element={<Trackorder />} />
-        <Route path='/aboutus' element={<Aboutus />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/trackorder" element={<Trackorder />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail_product/:id" element={<DetailProduct/>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
