@@ -38,7 +38,7 @@ export default function Navbar() {
                         <p className='  sm:text-[15px] text-sm  font-bold text-white'>Free shipping on all orders above Rs.1000</p>
                     </div>
                     <div className=' bg-[#1b48ab]  flex  md:justify-between  py-3 pb-5 pt-5  gap-4 md:gap-0  px-3 sm:px-0 '>
-                        <div className='  lg:w-[20%] sm:w-[35%] w-[50%] flex gap-1 justify-center pl-3'>
+                        <div className='  lg:w-[20%] sm:w-[35%] w-[50%] flex gap-1 justify-center pl-4'>
                             <button onClick={open} className='  lg:hidden xl:hidden h-12 text-3xl sm:flex flex  sm:justify-center sm:items-center  md:flex justify-center items-center w-14  text-white'>
                                 <GiHamburgerMenu />
                             </button>

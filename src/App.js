@@ -7,6 +7,7 @@ import Blogs from './Components/Blogs/Blogs';
 import Trackorder from './Components/Trackorder/Trackorder';
 import Aboutus from './Components/AboutUs/Aboutus';
 import Contact from './Components/Contact/Contact';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/aboutus' element={<Aboutus />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
