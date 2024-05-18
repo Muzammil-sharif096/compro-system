@@ -13,6 +13,7 @@ import Refund from './Components/Refund/Refund';
 import Privacy from './Components/Privacy/Privacy';
 import Terms from './Components/Terms/Terms';
 import Shipping from './Components/Shipping/Shipping';
+import DetailProduct from './Components/Home/DetailProduct';
 
 function App() {
   return (
@@ -34,8 +35,14 @@ function App() {
 
 
 
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/trackorder" element={<Trackorder />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail_product/:id" element={<DetailProduct/>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
