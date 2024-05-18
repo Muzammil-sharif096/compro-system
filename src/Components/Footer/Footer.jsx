@@ -11,6 +11,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 export default function Footer() {
@@ -76,7 +77,7 @@ export default function Footer() {
 
 
     </div>
-    <div className=' grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 sm:pb-12 '>
+    <div className=' grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 sm:pb-12 '>
          <div className='  space-y-4'>
             <h2  className=' text-[#1b48ab] text-base font-medium' >ABOUT US</h2>
             <div  className=' text-[#677279] text-base  space-y-2'>
@@ -92,17 +93,50 @@ export default function Footer() {
          </div>
          <div className=' space-y-4'>
             <h2 className=' text-[#1b48ab] text-base font-medium'>QUICK LINKS</h2>
-            <ul className=' space-y-2'>
-            <li className='  text-base text-[#00badb]  cursor-pointer '>All Products</li>
-            <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Track Order</li>
+            <ul className='  flex flex-col  gap-3'>
+            <li className='  text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>All Products</li>
+            <Link to='/trackorder'>
+  <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Track Order</li>
+            </Link>
+            <Link to='/aboutus'>
+
+
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>About US</li>
+            </Link>
+
+            <Link to='/faq'>
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>FAQ</li>
+
+            </Link>
+            <Link to='/refund'>
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Refund Policy</li>
+
+            </Link>
+            <Link to='/privacy'>
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Privacy Policy</li>
+
+
+            </Link>
+            <Link to='/refund'>
+
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Return Policy</li>
+            </Link>
+            <Link to='/terms'>
+
+
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Terms of Service</li>
+            </Link>
+
+            <Link to='/shipping'>
+
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Shipping Policy</li>
+            </Link>
+
+            <Link to='/contact'>
+
             <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Contact Us</li>
+            </Link>
+
             </ul>
          </div>
          <div className='  space-y-4'>
