@@ -164,6 +164,7 @@ export default function Navbar() {
 
 
                     <li>Blogs</li>
+                    
                     <li>Track Order</li>
                     <li>About Us</li>
                     <li>Contact</li>
@@ -191,7 +192,7 @@ export default function Navbar() {
 
 
             </div>
-            <div className='    lg:w-[70%] sm:w-[60%] w-[40%]   flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
+            <div className='    lg:w-[70%] sm:w-[60%] w-[40%]     flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
               <input onClick={() => setIsModalOpen(true)} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 sm:flex justify-center hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-3xl text-white    ' />
@@ -238,7 +239,7 @@ export default function Navbar() {
                 <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer py-2'>Home</li>
 
               </Link>
-              <li className="relative group  py-2 ">
+              <li className="relative group py-2 ">
                 <span className=" cursor-pointer   text-[#677279] hover:text-[#00badb] duration-300 flex items-center gap-2  ">Categories <FaAngleDown /></span>
                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-60 p-6 cursor-pointer">
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
