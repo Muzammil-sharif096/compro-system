@@ -12,7 +12,13 @@ const JoyRoom = () => {
     <>
       <div className="bg-neutral-100 py-10 px-16">
         <div className="flex justify-between items-center mb-8">
+<<<<<<< HEAD
           <p className="font-medium text-xl text-primary">JOYROOM</p>
+=======
+          <p className="font-medium text-xl text-primary">
+            JOYROOM
+          </p>
+>>>>>>> ebe71794f072f49e4744468439a427ed574d7bb3
           <p className="text-secondery text-sm font-medium tracking-wide cursor-pointer hover:underline">
             View all
           </p>
@@ -48,7 +54,23 @@ const JoyRoom = () => {
                   </p>
                 </div>
               </div>
+<<<<<<< HEAD
             </Link>
+=======
+              <h1 className="text-[12px] text-neutral-700 mb-2">{ele.brand}</h1>
+              <p className="text-primary font-medium text-[14px]">
+                {ele.title}
+              </p>
+              <div className="flex items-center gap-5 pt-3">
+                <p
+                  className={`text-lg font-medium ${index === 0 ? "text-red-500" : "text-cyan-500"
+                    }`}
+                >
+                  Rs.{ele.price}
+                </p>
+              </div>
+            </div>
+>>>>>>> ebe71794f072f49e4744468439a427ed574d7bb3
           ))}
         </div>
       </div>

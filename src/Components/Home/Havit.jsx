@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import data from "../../Data";
 import { Link } from 'react-router-dom';
 
@@ -44,7 +44,24 @@ const Havit = () => {
                   </p>
                 </div>
               </div>
+<<<<<<< HEAD
             </Link>
+=======
+              <h1 className=" text-[12px] text-neutral-700 mb-2">
+                {ele.brand}
+              </h1>
+              <p className="text-primary  font-medium text-[14px]">
+                {ele.title}
+              </p>
+
+              <div className="flex items-center gap-5 pt-3">
+                <p className="text-cyan-500 text-lg font-medium">
+                  Rs.{ele.price}
+                </p>
+
+              </div>
+            </div>
+>>>>>>> ebe71794f072f49e4744468439a427ed574d7bb3
           ))}
         </div>
       </div>

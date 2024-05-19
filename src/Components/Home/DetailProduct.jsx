@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import data from '../../Data'
 
 const DetailProduct = () => {
-    const {id} =useParams()
-    const productDetail =data.filter((item)=>item.id == id)[0]
+  const { id } = useParams()
+  const productDetail = data.filter((item) => item.id == id)[0]
 
   return (
     <div>

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 
 const Popular = () => {
-//   const popular = data.filter((item) =>
-//     item.category.includes("popular")
-//   );
+  //   const popular = data.filter((item) =>
+  //     item.category.includes("popular")
+  //   );
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -18,6 +18,7 @@ const Popular = () => {
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         {data.slice(5, 23).map((ele, index) => (
+<<<<<<< HEAD
           <Link to={`/detail_product/${ele.id}`} key={index}>
             <div className="flex border bg-white p-4">
               <div className="w-1/4 pb-8">
@@ -28,6 +29,28 @@ const Popular = () => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 />
+=======
+          <div key={index} className="flex border bg-white p-4">
+            <div className="w-1/4 pb-8">
+              <img
+                src={hoveredIndex === index ? ele.img2 : ele.img}
+                alt=""
+                className="w-full h-full object-cover"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              />
+            </div>
+            <div className="pl-4 flex flex-col justify-between">
+              <p className="text-gray-500 text-[12px]">{ele.category}</p>
+              <p className="font-medium text-[15px] text-primary">
+                {ele.title}
+              </p>
+              <div className="flex gap-2">
+                <div className="bg-black w-4 h-4"></div>
+                <div className="bg-blue-600 w-4 h-4"></div>
+                <div className="bg-green-600 w-4 h-4"></div>
+                <div className="bg-yellow-500 w-4 h-4"></div>
+>>>>>>> ebe71794f072f49e4744468439a427ed574d7bb3
               </div>
               <div className="pl-4 flex flex-col justify-between flex-1">
                 <div>

@@ -3,7 +3,7 @@ import data from "../../Data";
 import { Link } from "react-router-dom";
 
 const MonsterAudio = () => {
-  const Monster = data.filter((items) => items.brand =="MONSTER");
+  const Monster = data.filter((items) => items.brand == "MONSTER");
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
