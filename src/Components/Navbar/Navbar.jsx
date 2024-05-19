@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 import { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -28,7 +28,7 @@ export default function Navbar() {
     const open = () => {
         setShownavbar(true)
     }
-
+    const navigate = useNavigate()
 
     return (
         <>
@@ -102,13 +102,13 @@ export default function Navbar() {
                             <li className="relative group ">
                                 <span className=" cursor-pointer py-3  text-[#677279] hover:text-[#00badb] duration-300 ">Categories</span>
                                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-60 p-6 cursor-pointer">
-                                    <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
+                                    <li onClick={() => navigate(`/allitems/${'Routers'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
                                     <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
-                                    <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
-                                    <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
-                                    <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
+                                    <li onClick={() => navigate(`/allitems/${'WireLessAirBurds'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
+                                    <li onClick={() => navigate(`/allitems/${'HeadPhone'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
+                                    <li onClick={() => navigate(`/allitems/${'EarPhone'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
                                     <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Smart Watches</li>
-                                    <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
+                                    <li onClick={() => navigate(`/allitems/${'PowerBank'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
                                     <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Security Cameras</li>
                                     <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Android Tv Box</li>
                                     <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Graphic Tablets</li>

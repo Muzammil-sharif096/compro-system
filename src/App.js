@@ -1,4 +1,3 @@
-
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -9,6 +8,7 @@ import Aboutus from './Components/AboutUs/Aboutus';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import DetailProduct from './Components/Home/DetailProduct';
+import AllItems from './Components/AllItems/AllItems';
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
         <Route path="/trackorder" element={<Trackorder />} />
         <Route path="/aboutus" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/detail_product/:id" element={<DetailProduct/>} />
+        <Route path="/detail_product/:id" element={<DetailProduct />} />
+        <Route path="/allitems/:category" element={<AllItems />} />
       </Routes>
       <Footer />
     </>
