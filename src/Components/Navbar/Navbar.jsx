@@ -14,6 +14,9 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import {FiPhoneCall} from 'react-icons/fi'
+import {MdOutlineMedicalInformation} from 'react-icons/md'
+import data from '../../Data';
 
 export default function Navbar() {
   const [isCenterModalOpen, setIsCenterModalOpen] = useState(false);

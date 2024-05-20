@@ -42,37 +42,6 @@ export default function Footer() {
             para1: 'Guaranteed Safe and Secure Checkout.'
         },
     ]
-<<<<<<< HEAD
-  return (
-  <>
-  <div className='  bg-[#f3f5f6]   sm:px-14 px-4   space-y-12'>
-  <div className='border-b border-gray-300 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 pb-12 pt-8'>
-  {card.map((ele, index) => (
-    <div key={index} className='flex flex-col sm:flex-row items-center  sm:items-start  p-4 h-full'>
-      <div className='text-3xl text-[#1b48ab] flex-shrink-0'>
-        {ele.icon1}
-      </div>
-      <div className='px-5 flex-1 text-center sm:text-start space-y-2  pt-3 sm:pt-0'>
-        <h2 className='text-[#1b48ab] text-base font-medium'>{ele.head1}</h2>
-        <p className='text-[#677279] text-base'>{ele.para1}</p>
-      </div>
-    </div>
-  ))}
-</div>
-
-    <div className=' grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 sm:pb-12 '>
-         <div className='  space-y-4'>
-            <h2  className=' text-[#1b48ab] text-base font-medium' >ABOUT US</h2>
-            <div  className=' text-[#677279] text-base  space-y-2'>
-                <p>Compro System brings you premium top brands</p>
-                <p>from across the world providing latest Tech</p>
-                <p>accessories that fit your lifestyle. We're</p>
-                <p>dedicated to giving you the very best, high quality</p>
-                <p>imported products with a strong focus on</p>
-                <p>customer satisfaction in terms of fast shipping</p>
-                <p>times, dedicated support team, and competitive</p>
-                <p>prices in Pakistan</p>
-=======
     return (
         <>
             <div className='  bg-[#f3f5f6]   sm:px-14 px-4   space-y-12'>
@@ -234,7 +203,6 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
->>>>>>> ebe71794f072f49e4744468439a427ed574d7bb3
             </div>
         </>
     )
