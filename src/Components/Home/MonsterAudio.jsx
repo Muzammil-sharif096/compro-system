@@ -33,7 +33,7 @@ const MonsterAudio = () => {
                 </div>
                 <div className="pl-4 flex flex-col justify-between flex-1">
                   <div>
-                    <p className="text-gray-500 text-[12px]">{ele.category}</p>
+                    <p className="text-gray-500 text-[12px]">{ele.brand}</p>
                     <p className="font-medium text-[15px] text-primary">
                       {ele.title}
                     </p>
