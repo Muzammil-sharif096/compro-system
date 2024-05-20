@@ -45,38 +45,20 @@ export default function Footer() {
   return (
   <>
   <div className='  bg-[#f3f5f6]   sm:px-14 px-4   space-y-12'>
-    <div className='     border-b border-gray-300 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 pb-12 pt-8 '>
-        
-    
-        {card.map((ele)=>{
-            return(
-                <>
-                
-               
-                <div className=' flex sm:flex-row flex-col  text-center sm:text-start   justify-center  items-center '>
-                      <div className= ' text-3xl text-[#1b48ab] flex justify-center'>
-                    
-                    {ele.icon1}
-                    
-
-                </div>
-                <div className=' px-5'>
-                    
-                <h2 className=' text-[#1b48ab] text-base font-medium'>{ele.head1}</h2>
-                <p className=' text-[#677279] text-base '>{ele.para1}</p>
-                </div>
-                </div>
-                
-                </>
-
-            )
-        })}
-    
-
-
-
-
+  <div className='border-b border-gray-300 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 pb-12 pt-8'>
+  {card.map((ele, index) => (
+    <div key={index} className='flex flex-col sm:flex-row items-center  sm:items-start  p-4 h-full'>
+      <div className='text-3xl text-[#1b48ab] flex-shrink-0'>
+        {ele.icon1}
+      </div>
+      <div className='px-5 flex-1 text-center sm:text-start space-y-2  pt-3 sm:pt-0'>
+        <h2 className='text-[#1b48ab] text-base font-medium'>{ele.head1}</h2>
+        <p className='text-[#677279] text-base'>{ele.para1}</p>
+      </div>
     </div>
+  ))}
+</div>
+
     <div className=' grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 sm:pb-12 '>
          <div className='  space-y-4'>
             <h2  className=' text-[#1b48ab] text-base font-medium' >ABOUT US</h2>
