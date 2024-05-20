@@ -194,16 +194,18 @@ const AllItems = () => {
                                                             <div className="grid lg:grid-cols-2 grid-cols-1 bg-white">
                                                                 <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
                                                                     <div className="border col-span-1 flex flex-col space-y-4">
-                                                                        {filterdata && filterdata.images.length > 0 && filterdata.images.map((image, index) => (
-                                                                            <img
-                                                                                key={index}
-                                                                                src={index}
-                                                                                alt={`Product image ${index + 1}`}
-                                                                                className="w-full cursor-pointer"
-                                                                                onMouseEnter={() => setHoveredIndex(index)}
-                                                                                onMouseLeave={() => setHoveredIndex(null)}
-                                                                            />
-                                                                        ))}
+                                                                        {
+                                                                            filterdata && filterdata.images.length > 0 && filterdata.images.map((image, index) => (
+                                                                                <img
+                                                                                    key={index}
+                                                                                    src={index}
+                                                                                    alt={`Product image ${index + 1}`}
+                                                                                    className="w-full cursor-pointer"
+                                                                                    onMouseEnter={() => setHoveredIndex(index)}
+                                                                                    onMouseLeave={() => setHoveredIndex(null)}
+                                                                                />
+                                                                            ))
+                                                                        }
                                                                     </div>
                                                                     <div className="border col-span-3">
                                                                         <img
