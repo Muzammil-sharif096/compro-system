@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import data from "../../Data";
 
 const Popular = () => {
-//   const popular = data.filter((item) =>
-//     item.category.includes("popular")
-//   );
+  //   const popular = data.filter((item) =>
+  //     item.category.includes("popular")
+  //   );
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -15,7 +15,7 @@ const Popular = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-        {data.slice(5,23).map((ele, index) => (
+        {data.slice(5, 23).map((ele, index) => (
           <div key={index} className="flex border bg-white p-4">
             <div className="w-1/4 pb-8">
               <img

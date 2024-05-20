@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import data from "../../Data";
 
 
 const Wiwu = () => {
-      const wiwu = data.filter((items) => items.brand === "WIWU");
+  const wiwu = data.filter((items) => items.brand === "WIWU");
 
-      const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
     <div>
       <div className="bg-neutral-100  py-10  px-16">
@@ -38,11 +38,10 @@ const Wiwu = () => {
 
               <div className="flex items-center gap-5 pt-3">
                 <p
-                  className={`text-lg font-medium ${
-                    index === 1 || index === 5
-                      ? "text-cyan-500"
-                      : "text-red-500"
-                  }`}
+                  className={`text-lg font-medium ${index === 1 || index === 5
+                    ? "text-cyan-500"
+                    : "text-red-500"
+                    }`}
                 >
                   Rs.{ele.price}
                 </p>

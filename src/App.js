@@ -1,4 +1,3 @@
-
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -14,24 +13,24 @@ import Privacy from './Components/Privacy/Privacy';
 import Terms from './Components/Terms/Terms';
 import Shipping from './Components/Shipping/Shipping';
 import DetailProduct from './Components/Home/DetailProduct';
-
+import AllItems from './Components/AllItems/AllItems';
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/blog' element={<Blogs />} />
-        <Route path='/trackorder' element={<Trackorder />} />
-        <Route path='/aboutus' element={<Aboutus />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/faq' element={<Faq/>} />
-        <Route path='/refund' element={<Refund/>} />
-        <Route path='/privacy' element={<Privacy/>} />
-        <Route path='/terms' element={<Terms/>} />
-        <Route path='/shipping' element={<Shipping/>} />
-
-        <Route path="/detail_product/:id" element={<DetailProduct/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/trackorder" element={<Trackorder />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail_product/:id" element={<DetailProduct />} />
+        <Route path="/allitems/:category" element={<AllItems />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/refund" element={<Refund />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/shipping" element={<Shipping />} />
       </Routes>
       <Footer />
     </>

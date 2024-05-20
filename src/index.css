@@ -15,6 +15,13 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*{
+  /* border:2px solid red; */
+}
+.router {
+  background-image: url(../public/assets/img/routerimg);
+  background-size: 100% 100%;
+}
 
 
 /* Add these styles to your CSS file */

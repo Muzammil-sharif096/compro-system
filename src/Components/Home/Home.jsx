@@ -9,18 +9,18 @@ import Wiwu from "./Wiwu";
 import Popular from "./Popular";
 
 export default function Home() {
- return (
-   <>
-     <Lenovo/>
-     <MonsterAudio/>
-     <Haino/>
-     <Popular/>
-     <JoyRoom/>
-     <Baseus/>
-     <Havit/>
-     <Wiwu/>
-   </>
- );
-    
+  return (
+    <>
+      <Lenovo />
+      <MonsterAudio />
+      <Haino />
+      <Popular />
+      <JoyRoom />
+      <Baseus />
+      <Havit />
+      <Wiwu />
+    </>
+  );
+
 
 }

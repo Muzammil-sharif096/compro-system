@@ -13,13 +13,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
-import { FiPhoneCall } from "react-icons/fi";
-import { MdOutlineMedicalInformation } from "react-icons/md";
-
-import data from '../../Data';
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [isCenterModalOpen, setIsCenterModalOpen] = useState(false);
@@ -108,6 +102,9 @@ export default function Navbar() {
   }, [isCenterModalOpen]);
 
 
+  const navigate = useNavigate()
+
+
   return (
     <>
       <div className=' '>
@@ -120,18 +117,13 @@ export default function Navbar() {
               <button onClick={() => setIsCenterModalOpen(!isCenterModalOpen)} className='  lg:hidden xl:hidden h-12 text-3xl sm:flex flex  sm:justify-center sm:items-center  md:flex justify-center items-center w-14  text-white'>
                 {isCenterModalOpen ? <AiOutlineClose /> : <GiHamburgerMenu />}
               </button>
-              <Link to='/'>
-
-                <img src="/img/COMPRO_SYSTEM_1_a5d24fe7-ecb5-4662-954f-f1ea3897469e_200x.png" alt="" />
-              </Link>
-
+              <img src="/img/COMPRO_SYSTEM_1_a5d24fe7-ecb5-4662-954f-f1ea3897469e_200x.png" alt="" />
               {isCenterModalOpen && (
                 <div className={`fixed top-28 left-0 right-0 bottom-0 bg-white p-6 shadow-lg overflow-y-auto ${centerModalClass}`}>
                   <ul className="text-[#677279] text-lg space-y-4">
                     <li>Home</li>
                     <div className=' flex items-center justify-between ' onClick={() => setIsRightModalOpen(true)}>
                       <li>Categories</li>
-
                       <button className=" text-[#677279] text-xl  font-normal"  >
                         <FaAngleRight />
                       </button>
@@ -139,7 +131,6 @@ export default function Navbar() {
                     {isRightModalOpen && (
                       <div className={`fixed top-0 bottom-0 left-0 right-0  bg-white shadow-lg overflow-y-auto ${rightModalClass}`}>
                         <div className=' border-b-2 border-gray-200  pb-4 pt-2 pl-4 '>
-
                           <button onClick={handleBackClick} className=" text-[#677279] text-lg flex items-center gap-2"   ><FaAngleLeft /> Back </button>
                         </div>
                         <ul className="     space-y-3 w-60 pl-5   pt-5 cursor-pointer">
@@ -153,21 +144,17 @@ export default function Navbar() {
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Security Cameras</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Android Tv Box</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Graphic Tablets</li>
-
                         </ul>
                       </div>
                     )}
-
                     <div className=' flex items-center justify-between'>
                       <li onClick={() => setIsRightModalOpen(true)}>Gaming</li>
-
                       <button onClick={() => setIsRightModalOpen(true)} className=" text-[#677279] text-xl  font-normal"  >
                         <FaAngleRight />
                       </button>
                     </div>
                     <div className=' flex items-center justify-between'>
                       <li onClick={() => setIsRightModalOpen(true)}>Brands</li>
-
                       <button onClick={() => setIsRightModalOpen(true)} className=" text-[#677279] text-xl  font-normal"  >
                         <FaAngleRight />
                       </button>
@@ -178,42 +165,24 @@ export default function Navbar() {
 
                           <button onClick={handleBackClick} className=" text-[#677279] text-lg flex items-center gap-2"   ><FaAngleLeft /> Back </button>
                         </div>
-                        <ul className="     space-y-3 w-60 pl-5   pt-5 cursor-pointer">
-                          <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
+                        <ul className="  space-y-3 w-60 pl-5   pt-5 cursor-pointer">
+                          <li onClick={() => { navigate(`/allitems/${'Routers'}`) }} className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
                           <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
-                          <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
-                          <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
-                          <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
+                          <li onClick={() => { navigate(`/allitems/${'WireLessAirBurds'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
+                          <li onClick={() => { navigate(`/allitems/${'HeadPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
+                          <li onClick={() => { navigate(`/allitems/${'EarPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Smart Watches</li>
-                          <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
+                          <li onClick={() => { navigate(`/allitems/${'PowerBank'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Security Cameras</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Android Tv Box</li>
                           <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Graphic Tablets</li>
                         </ul>
                       </div>
                     )}
-
-                    <div className='  flex flex-col gap-4'>
-                      <Link to='/blog'>
-
-                        <li>Blogs</li>
-                      </Link>
-                      <Link to='/trackorder'>
-
-                        <li>Track Order</li>
-                      </Link>
-
-                      <Link to='/aboutus'>
-
-                        <li>About Us</li>
-                      </Link>
-
-                      <Link to='/contact'>
-
-                        <li>Contact</li>
-                      </Link>
-                    </div>
-
+                    <li>Blogs</li>
+                    <li>Track Order</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
                   </ul>
 
                   <div className=' space-y-3 pt-10 pb-6'>
@@ -269,19 +238,14 @@ export default function Navbar() {
                   </div>
                 </div>
               )}
-
             </div>
             <div className='    lg:w-[70%] sm:w-[60%] w-[40%]     flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
               <input onClick={() => setIsModalOpen(true)} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 sm:flex justify-center hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-3xl text-white    ' />
-
               </button>
-
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 flex justify-center sm:hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-2xl text-white    ' />
-
-
               </button>
               {isModalOpen && (
                 <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-start">
@@ -347,8 +311,6 @@ export default function Navbar() {
                   </div>
                 </div>
               )}
-
-
             </div>
             <div className=' md:flex gap-6 items-center xl:w-[9%] w-[20%] pl-10 xl:pl-0  hidden  '>
               <FiShoppingCart className=' text-white text-2xl' />
@@ -366,13 +328,13 @@ export default function Navbar() {
               <li className=" group py-2 ">
                 <span className=" cursor-pointer   text-[#677279] hover:text-[#00badb] duration-300 flex items-center gap-2  ">Categories <FaAngleDown /></span>
                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-60 p-6 cursor-pointer">
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
+                  <li onClick={() => navigate(`/allitems/${'Routers'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
+                  <li onClick={() => navigate(`/allitems/${'WireLessAirBurds'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
+                  <li onClick={() => navigate(`/allitems/${`HeadPhone`}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
+                  <li onClick={() => navigate(`/allitems/${'EarPhone'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Smart Watches</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
+                  <li onClick={() => navigate(`/allitems/${'PowerBank'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Power Banks</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Security Cameras</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Android Tv Box</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Graphic Tablets</li>

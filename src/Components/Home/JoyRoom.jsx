@@ -11,7 +11,7 @@ const JoyRoom = () => {
       <div className="bg-neutral-100 py-10 px-16">
         <div className="flex justify-between items-center mb-8">
           <p className="font-medium text-xl text-primary">
-        JOYROOM
+            JOYROOM
           </p>
           <p className="text-secondery text-sm font-medium tracking-wide cursor-pointer hover:underline">
             View all
@@ -35,9 +35,8 @@ const JoyRoom = () => {
               </p>
               <div className="flex items-center gap-5 pt-3">
                 <p
-                  className={`text-lg font-medium ${
-                    index === 0 ? "text-red-500" : "text-cyan-500"
-                  }`}
+                  className={`text-lg font-medium ${index === 0 ? "text-red-500" : "text-cyan-500"
+                    }`}
                 >
                   Rs.{ele.price}
                 </p>
