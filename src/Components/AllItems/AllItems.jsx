@@ -11,10 +11,9 @@ const AllItems = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [style, setStyle] = useState('grid');
     const [showDiv1, setShowDiv1] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
-    console.log("Imagessssss", filterdata.images)
-
-
+    console.log(selectedProduct);
     let categoryText = '';
     switch (category) {
         case 'Routers':
@@ -187,60 +186,13 @@ const AllItems = () => {
                                                         {(index === 3 || index === 9) ? "Add To Cart" : (index === 6 || index === 12) ? "Choose Option" : "Sold out"}
                                                     </button>
                                                     <button
-                                                        onClick={() => setShowDiv1(true)}
-                                                        className='w-full hover:bg-gray-100 font-bold relative overflow-hidden text-sm border text-secondery p-2'>Quick view</button>
-                                                    {
-                                                        showDiv1 && (
-                                                            <div className="grid lg:grid-cols-2 grid-cols-1 bg-white">
-                                                                <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
-                                                                    <div className="border col-span-1 flex flex-col space-y-4">
-                                                                        {
-                                                                            filterdata && filterdata.images.length > 0 && filterdata.images.map((image, index) => (
-                                                                                <img
-                                                                                    key={index}
-                                                                                    src={index}
-                                                                                    alt={`Product image ${index + 1}`}
-                                                                                    className="w-full cursor-pointer"
-                                                                                    onMouseEnter={() => setHoveredIndex(index)}
-                                                                                    onMouseLeave={() => setHoveredIndex(null)}
-                                                                                />
-                                                                            ))
-                                                                        }
-                                                                    </div>
-                                                                    <div className="border col-span-3">
-                                                                        <img
-                                                                            src={
-                                                                                hoveredIndex !== null ? filterdata.images[hoveredIndex] : filterdata.img
-                                                                            }
-                                                                            alt="Main product"
-                                                                            className="w-full"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                                <div className="flex flex-col space-y-4">
-                                                                    <div className="flex flex-col space-y-4 border p-5 items-start">
-                                                                        <div className=" pb-5">
-                                                                            <h2 className="text-2xl font-semibold text-primary">
-                                                                                {filterdata.title}
-                                                                            </h2>
-                                                                        </div>
-                                                                        <div className="flex items-center space-x-4">
-                                                                            <p className="text-red-500 font-medium text-2xl">
-                                                                                <span className="text-primary text-sm font-medium">Price:</span>{" "}
-                                                                                Rs {filterdata.price}
-                                                                            </p>
-                                                                            <p className="text-gray-500 text-lg line-through">
-                                                                                Rs.{filterdata.delprice}
-                                                                            </p>
-                                                                        </div>
-                                                                        <button className="bg-secondary text-white bg-secondery font-medium py-2.5 lg:px-24">
-                                                                            Add to Cart
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    }
+                                                        onClick={() => {
+                                                            setShowDiv1(true);
+                                                            setSelectedProduct(ele);
+                                                        }}
+                                                        className='w-full hover:bg-gray-100 font-bold text-sm border text-secondery p-2'>
+                                                        Quick view
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))
@@ -346,6 +298,60 @@ const AllItems = () => {
                     }
                 </div>
             </div>
+            {
+                showDiv1 && selectedProduct && (
+                    <div className='bg-gray-800 bg-opacity-50 fixed inset-0 flex items-center justify-center'>
+                        <div className='bg-white p-12 relative flex flex-col justify-evenly gap-12 md:flex-row'>
+                            <div className='flex justify-between gap-4'>
+                                <div className=''>
+                                    {selectedProduct.images.map((image, index) => (
+                                        <img
+                                            key={index}
+                                            className='w-12 md:w-16 cursor-pointer'
+                                            src={image}
+                                            alt=""
+                                            onClick={() => setSelectedProduct({ ...selectedProduct, img: image })}
+                                        />
+                                    ))}
+                                </div>
+                                <div>
+                                    <img className='w-52 md:w-96' src={selectedProduct.img} alt="" />
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-between'>
+                                <div className='space-y-6'>
+                                    <h1 className='text-2xl md:text-3xl font-bold'>{selectedProduct.title}</h1>
+                                    <h2 className='text-primary font-semibold text-base'>{selectedProduct.brand}</h2>
+                                    <hr />
+                                    <p className='text-primary font-bold'>Price :<span className='text-2xl text-secondery pl-4 font-semibold'>Rs.{selectedProduct.price}</span></p>
+                                    <div className='flex gap-6'>
+                                        <h1 className='text-primary font-bold'>Stock</h1>
+                                        <h2 className='text-silver font-bold'>Sold out</h2>
+                                    </div>
+                                    <div className='flex items-center gap-5'>
+                                        <h1 className='text-primary font-bold'>Quantity :</h1>
+                                        <div className='border-2 border-secondery w-16 p-1'>
+                                            <select id="Pcatagory" class="border-none w-full outline-none">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button className='bg-silver w-52 md:w-60 p-2 text-white font-bold'>Sold out</button>
+                                </div>
+                                <div className='absolute top-2 text-2xl font-bold right-6 cursor-pointer' onClick={() => setShowDiv1(false)}>X</div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }
