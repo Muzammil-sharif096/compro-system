@@ -1,9 +1,9 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 import data from '../../Data';
 import { Link } from 'react-router-dom';
 
 const Lenovo = () => {
- const lenovo = data.filter((ele) => ele.brand == "LENOVO");
+  const lenovo = data.filter((ele) => ele.brand == "LENOVO");
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -47,9 +47,9 @@ const Lenovo = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-          
-            {lenovo.map((ele, index) => (
-              <Link to={`/detail_product/${ele.id}`}>
+
+          {lenovo.map((ele, index) => (
+            <Link to={`/detail_product/${ele.id}`}>
               <div key={index} className="border bg-white p-4">
                 <div className="flex justify-center mb-4">
                   <img
@@ -76,8 +76,8 @@ const Lenovo = () => {
                   </p>
                 </div>
               </div>
-          </Link>
-            ))}
+            </Link>
+          ))}
         </div>
       </div>
     </>

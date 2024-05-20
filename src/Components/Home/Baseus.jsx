@@ -35,11 +35,10 @@ const Baseus = () => {
               </p>
               <div className="flex items-center gap-5 pt-3">
                 <p
-                  className={`text-lg font-medium ${
-                    index === 4 || index === 5
-                      ? "text-cyan-500"
-                      : "text-red-500"
-                  }`}
+                  className={`text-lg font-medium ${index === 4 || index === 5
+                    ? "text-cyan-500"
+                    : "text-red-500"
+                    }`}
                 >
                   Rs.{ele.price}
                 </p>

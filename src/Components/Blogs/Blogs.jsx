@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoWifi } from "react-icons/io5";
+import React, { useState, useEffect } from 'react';
 
 export default function Blogs() {
-  const [show ,setshow] = useState (false)
+  const [isBottomModalOpen, setIsBottomModalOpen] = useState(false);
+  const [bottomModalClass, setBottomModalClass] = useState('bottom-modal-initial');
 
-  const open =()=>{
-    setshow (true)
+  useEffect(() => {
+    if (isBottomModalOpen) {
+      setTimeout(() => {
+        setBottomModalClass('bottom-modal-enter-active');
+      }, 10); 
+    } else {
+      setBottomModalClass('bottom-modal-exit-active');
+    }
+  }, [isBottomModalOpen]);
 
-  }
   return (
    <>
    <div className=' bg-[#f3f5f6] pt-12 pb-6 sm:px-14 px-4 space-y-8'>
@@ -19,9 +26,34 @@ export default function Blogs() {
       <div>
         <h2 className=' text-[#1b48ab] text-3xl font-medium'>Guides</h2>
       </div>
-      <div className=' md:flex  gap-9  text-[#677279] text-base   '>
+      <div className=' flex justify-end   gap-9  text-[#677279] text-base  '>
+        <button className=' md:hidden    text-[#677279] text-base'  onClick={() => setIsBottomModalOpen(true)} > All</button>
+        {isBottomModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-end">
+          <div className={`bg-white w-full fixed bottom-0 left-0 p-6 shadow-lg ${bottomModalClass}`}>
+            <div className="flex justify-between items-center  mb-4">
+              <h2 className="text-lg text-[#1b48ab] font-semibold">Categories</h2>
+              <button 
+                className="text-[#1b48ab] text-4xl font-semibold" 
+                onClick={() => setIsBottomModalOpen(false)}
+              >
+                &times;
+              </button>
+            </div>
+            <div className="flex flex-col space-y-2">
+              <p className=' text-base text-[#00badb] duration-300 cursor-pointer'>All</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>Best earbuds in pakistan under 5000</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>TP-Link device prices in Pakistan</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>TP-Link router prices in Pakistan</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>True Wireless Stereo</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>TWS Earbuds in pakistan</p>
+              <p className='text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>WIFI 6 Routers</p>
+            </div>
+          </div>
+        </div>
+      )}
        
-      <div className=' md:flex  gap-9  text-[#677279] text-base  hidden '>
+      <div className=' md:flex flex-wrap  gap-9  text-[#677279] text-base  hidden '>
 
         <p className= ' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>All</p>
         <p className= ' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer'>Best earbuds in pakistan under 5000</p>
@@ -43,7 +75,13 @@ export default function Blogs() {
         <h2 className=' text-[#1b48ab] lg:text-2xl text-xl font-bold group-hover:text-[#00badb] duration-300  cursor-pointer' >Top 7 Bomb Wireless Earbuds to Enhance Your Music with in 2022</h2>
         <div className=' flex gap-4'>
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Best earbuds in pakistan under 5000</p>
+        <div className=' flex items-center justify-center'>
+        <div className=' h-1 w-1 rounded-full bg-[#677279]'></div>
+        </div>
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Hasan Zahid</p>
+        <div className=' flex items-center justify-center'>
+        <div className=' h-1 w-1 rounded-full bg-[#677279]'></div>
+        </div>
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Oct 25, 2021</p>
         </div>
         </div>
@@ -54,9 +92,15 @@ export default function Blogs() {
         </div>
         <h2 className=' text-[#1b48ab] lg:text-2xl text-xl font-bold group-hover:text-[#00badb] duration-300  cursor-pointer' >What is the Best TP-Link Router With Prices Updated 2022</h2>
         <div className=' flex gap-4'>
-        <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Best earbuds in pakistan under 5000</p>
+        <p  className= ' text-[#677279] sm:text-sm text-[12px]'>TP-Link device prices in Pakistan</p>
+        <div className=' flex items-center justify-center'>
+        <div className=' h-1 w-1 rounded-full bg-[#677279]'></div>
+        </div>
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Hasan Zahid</p>
-        <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Oct 25, 2021</p>
+        <div className=' flex items-center justify-center'>
+        <div className=' h-1 w-1 rounded-full bg-[#677279]'></div>
+        </div>
+        <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Oct 07, 2021</p>
         </div>
         </div>
       </div>

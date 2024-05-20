@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import data from "../../Data";
 
 
@@ -41,7 +41,7 @@ const Havit = () => {
                 <p className="text-cyan-500 text-lg font-medium">
                   Rs.{ele.price}
                 </p>
-              
+
               </div>
             </div>
           ))}
