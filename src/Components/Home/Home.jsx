@@ -7,11 +7,13 @@ import Baseus from "./Baseus";
 import Havit from "./Havit";
 import Wiwu from "./Wiwu";
 import Popular from "./Popular";
+import ProductDay from "./ProductDay";
 
 export default function Home() {
   return (
     <>
       <Lenovo />
+      <ProductDay/>
       <MonsterAudio />
       <Haino />
       <Popular />
