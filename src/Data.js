@@ -9,7 +9,7 @@ const data = [
     price: 5500,
     delprice: 8000,
     images: [
-      "../assets/img/lenevoimg1hover.webp",
+      "/assets/img/lenevoimg1hover.webp",
       "../assets/img/lenevoimg1hover.webp",
       "../assets/img/lenevoimg1hover.webp",
       "../assets/img/lenevoimg1hover.webp",
@@ -22,7 +22,7 @@ const data = [
     img: "../assets/img/lenevoimg2.webp",
     img2: "../assets/img/lenevoimg2hover.webp",
     brand: "LENOVO",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo LP5 TWS Bluetooth 5.0 Earbuds",
     price: 3750,
@@ -41,7 +41,7 @@ const data = [
     img: "../assets/img/lenevoimg3.webp",
     img2: "../assets/img/lenevoimg3hover.webp",
     brand: "LENOVO",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title:
       "Lenovo Thinkplus XT95 Pro Bluetooth Earphone 9D HIFI Sound (Luminous Version)",
@@ -61,7 +61,7 @@ const data = [
     img: "../assets/img/lenevoimg4.webp",
     img2: "../assets/img/lenevoimg4hover.webp",
     brand: "LENOVO",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title:
       "Lenovo XT80 Bluetooth 5.3 Wireless Earphones with Mic Button Noise Reduction",
@@ -81,7 +81,7 @@ const data = [
     img: "../assets/img/lenevoimg5.webp",
     img2: "../assets/img/lenevoimg5hover.webp",
     brand: "LENOVO",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo TW60 Bluetooth 5.3 Noise Reduction Earbuds",
     price: 6500,
@@ -100,7 +100,7 @@ const data = [
     img: "../assets/img/lenevoimg6.webp",
     img2: "../assets/img/lenevoimg6hover.webp",
     brand: "LENOVO",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo LP19 Bluetooth 5.3 Sports Noise Reduction Earbuds",
     price: 4500,
@@ -119,7 +119,7 @@ const data = [
     img: "../assets/img/monsterimg1.webp",
     img2: "../assets/img/monsterimg1hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo Monster XKT12 Bluetooth 5.3 Gaming Earbuds",
     price: 4750,
@@ -138,7 +138,7 @@ const data = [
     img: "../assets/img/monsterimg2.webp",
     img2: "../assets/img/monsterimg2hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo Monster XKT16 Bluetooth 5.3 Earphone",
     price: 4750,
@@ -157,7 +157,7 @@ const data = [
     img: "../assets/img/monsterimg3.webp",
     img2: "../assets/img/monsterimg3hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo Monster XKT09 Bluetooth 5.2 Earphones",
     price: 4750,
@@ -176,7 +176,7 @@ const data = [
     img: "../assets/img/monsterimg4.webp",
     img2: "../assets/img/monsterimg4hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo Monster XKT06 Bluetooth 5.2 Gaming Earbuds",
     price: 4750,
@@ -195,7 +195,7 @@ const data = [
     img: "../assets/img/monsterimg5.webp",
     img2: "../assets/img/monsterimg5hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones,"],
 
     title: "Lenovo Monster XKT08 Bluetooth 5.3 Low Latency Earbuds",
     price: 4750,
@@ -214,7 +214,7 @@ const data = [
     img: "../assets/img/monsterimg6.webp",
     img2: "../assets/img/monsterimg6hover.webp",
     brand: "MONSTER",
-    category: ["airbuds,wirelessheadphones,"],
+    category: ["airbuds","wirelessheadphones","popular"],
 
     title: "Lenovo Monster XKT02 Bluetooth 5.1 Earphones",
     price: 4750,
@@ -234,7 +234,7 @@ const data = [
     img: "../assets/img/hainoimg1.webp",
     img2: "../assets/img/hainoimg1hover.webp",
     brand: "HAINO",
-    category: ["airbuds,wirelessheadphones,watches"],
+    category: ["airbuds","wirelessheadphones","watches","popular"],
 
     title: "Haino Teko G9 Ultra Max Smart Watch- with 2 Straps",
     price: 8499,
@@ -254,7 +254,7 @@ const data = [
     img: "../assets/img/hainoimg2.webp",
     img2: "../assets/img/hainoimg2hover.webp",
     brand: "HAINO",
-    category: ["airbuds,wirelessheadphones,watches"],
+    category: ["airbuds","wirelessheadphones","watches","popular"],
 
     title: "Haino Teko G8 Mini Smart Watch",
     price: 8500,
@@ -273,7 +273,7 @@ const data = [
     img: "../assets/img/hainoimg3.webp",
     img2: "../assets/img/hainoimg3hover.webp",
     brand: "HAINO",
-    category: ["airbuds,wirelessheadphones,watches"],
+    category: ["airbuds","wirelessheadphones","watches"],
 
     title: "Haino Teko G8 Max Smart Watch- Golden Edition",
     price: 7350,
@@ -293,7 +293,7 @@ const data = [
     img: "../assets/img/hainoimg4.webp",
     img2: "../assets/img/hainoimg4hover.webp",
     brand: "HAINO",
-    category: ["airbuds,wirelessheadphones,watches"],
+    category: ["airbuds","wirelessheadphones","watches","popular"],
 
     title: "Haino Teko T92 Ultra Max Smart Watch (2 Straps)",
     price: 7200,
@@ -352,7 +352,7 @@ const data = [
     img: "../assets/img/joyroomimg1.webp",
     img2: "../assets/img/joyroomimg1hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone","popular"],
 
     title: "Joyroom 10000mAh 22.5W Powerbank with Large Digital Display",
     price: 4200,
@@ -372,7 +372,7 @@ const data = [
     img: "../assets/img/joyroomimg2.webp",
     img2: "../assets/img/joyroomimg2hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone"],
 
     title: "JR-ML05 JOYROOM RGB Wireless Speaker",
     price: 6999,
@@ -391,7 +391,7 @@ const data = [
     img: "../assets/img/joyroomimg3.webp",
     img2: "../assets/img/joyroomimg3hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone"],
 
     title: "JR-BC1 JOYROOM TRUE WIRELESS ANC EARBUDS-WITH COVER - BLACK",
     price: 8750,
@@ -410,7 +410,7 @@ const data = [
     img: "../assets/img/joyroomimg4.webp",
     img2: "../assets/img/joyroomimg4hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone"],
 
     title: "JR-BC1 JOYROOM TRUE WIRELESS ANC EARBUDS-WITH COVER - BLACK",
     price: 6750,
@@ -429,7 +429,7 @@ const data = [
     img: "../assets/img/joyroomimg5.webp",
     img2: "../assets/img/joyroomimg5hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone"],
 
     title: "Joyroom JR-W020 20W Mini magnetic wireless power bank 10000mah",
     price: 7200,
@@ -447,7 +447,7 @@ const data = [
     img: "../assets/img/joyroomimg6.webp",
     img2: "../assets/img/joyroomimg6hover.webp",
     brand: "JOYROOM",
-    category: ["airbuds,wirelessheadphones,watches,charger,microphone"],
+    category: ["airbuds","wirelessheadphones","watches","charger","microphone"],
 
     title: "MG-C05 BLUETOOTH TWS WIRELESS HEADSET - BLACK",
     price: 5000,
@@ -466,7 +466,7 @@ const data = [
     img: "../assets/img/baseusimg1.webp",
     img2: "../assets/img/baseusimg1hover.webp",
     brand: "BASEUS",
-    category: ["airbuds,wirelessheadphones,charger,microphone,powerbank"],
+    category: ["airbuds","wirelessheadphones","charger","microphone","powerbank","popular"],
 
     title:
       "Baseus Bowie P1 Neckband Earphone Bluetooth 5.2 Magnetic Adsorption Wireless Headphone",
@@ -487,7 +487,7 @@ const data = [
     img: "../assets/img/baseusimg2.webp",
     img2: "../assets/img/baseusimg2hover.webp",
     brand: "BASEUS",
-    category: ["airbuds,wirelessheadphones,charger,microphone,powerbank"],
+    category: ["airbuds","wirelessheadphones","charger","microphone","powerbank","popular"],
 
     title: "Baseus Encok WM01 True Wireless Earphones",
     price: 5000,
@@ -506,7 +506,7 @@ const data = [
     img: "../assets/img/baseusimg3.webp",
     img2: "../assets/img/baseusimg3hover.webp",
     brand: "BASEUS",
-    category: ["airbuds,wirelessheadphones,charger,microphone,powerbank"],
+    category: ["airbuds","wirelessheadphones","charger","microphone","powerbank","popular"],
 
     title: "Baseus Bowie D05 Wireless Headphone Bluetooth",
     price: 12500,
@@ -563,10 +563,10 @@ const data = [
   {
     id: 30,
     img: "../assets/img/baseusimg6.webp",
-    img2: "../assets/img/baseusimg6hover.webp",
+    img2: "../assets/img/baseusimg6hover.avif",
     brand: "BASEUS",
     category: [
-      "airbuds,wirelessheadphones,charger,microphone,powerbank,popular",
+      "airbuds","wirelessheadphones","charger","microphone","powerbank","popular",
     ],
 
     title: "Baseus Bipow Digital Display Power bank 30000mAh 20W Black",
@@ -587,7 +587,8 @@ const data = [
     img2: "../assets/img/havitimg1hover.webp",
     brand: "HAVIT",
     category: [
-      "airbuds,wirelessheadphones,charger,microphone,powerbank,popular",
+      "airbuds","wirelessheadphones","charger"
+      ,"microphone","powerbank","popular",
     ],
 
     title: "Havit I66 Bluetooth Headphone- 6 Month Replacement Warranty",
@@ -607,7 +608,7 @@ const data = [
     img2: "../assets/img/havitimg2hover.webp",
     brand: "HAVIT",
     category: [
-      "airbuds,wirelessheadphones,charger,microphone,powerbank,popular",
+      "airbuds","wirelessheadphones","charger","microphone","powerbank","popular",
     ],
 
     title: "Havit TH650 RGB Headphone Stand",

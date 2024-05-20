@@ -191,54 +191,7 @@ const AllItems = () => {
                                                         className='w-full hover:bg-gray-100 font-bold relative overflow-hidden text-sm border text-secondery p-2'>Quick view</button>
                                                     {
                                                         showDiv1 && (
-                                                            <div className="grid lg:grid-cols-2 grid-cols-1 bg-white">
-                                                                <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
-                                                                    <div className="border col-span-1 flex flex-col space-y-4">
-                                                                        {
-                                                                            filterdata && filterdata.images.length > 0 && filterdata.images.map((image, index) => (
-                                                                                <img
-                                                                                    key={index}
-                                                                                    src={index}
-                                                                                    alt={`Product image ${index + 1}`}
-                                                                                    className="w-full cursor-pointer"
-                                                                                    onMouseEnter={() => setHoveredIndex(index)}
-                                                                                    onMouseLeave={() => setHoveredIndex(null)}
-                                                                                />
-                                                                            ))
-                                                                        }
-                                                                    </div>
-                                                                    <div className="border col-span-3">
-                                                                        <img
-                                                                            src={
-                                                                                hoveredIndex !== null ? filterdata.images[hoveredIndex] : filterdata.img
-                                                                            }
-                                                                            alt="Main product"
-                                                                            className="w-full"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                                <div className="flex flex-col space-y-4">
-                                                                    <div className="flex flex-col space-y-4 border p-5 items-start">
-                                                                        <div className=" pb-5">
-                                                                            <h2 className="text-2xl font-semibold text-primary">
-                                                                                {filterdata.title}
-                                                                            </h2>
-                                                                        </div>
-                                                                        <div className="flex items-center space-x-4">
-                                                                            <p className="text-red-500 font-medium text-2xl">
-                                                                                <span className="text-primary text-sm font-medium">Price:</span>{" "}
-                                                                                Rs {filterdata.price}
-                                                                            </p>
-                                                                            <p className="text-gray-500 text-lg line-through">
-                                                                                Rs.{filterdata.delprice}
-                                                                            </p>
-                                                                        </div>
-                                                                        <button className="bg-secondary text-white bg-secondery font-medium py-2.5 lg:px-24">
-                                                                            Add to Cart
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                           <div>sdc</div>
                                                         )
                                                     }
                                                 </div>

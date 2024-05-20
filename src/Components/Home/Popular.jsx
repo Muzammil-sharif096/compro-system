@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../../Data";
 import { Link } from "react-router-dom";
 
 const Popular = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [cardHeight, setCardHeight] = useState("auto");
+
+  useEffect(() => {
+    const maxHeight = Math.max(
+      ...Array.from(document.querySelectorAll(".popular-card")).map(
+        (card) => card.clientHeight
+      )
+    );
+    setCardHeight(maxHeight);
+  }, [hoveredIndex]); // Update when hoveredIndex changes
 
   const filterPopular = data.filter((item) =>
     item.category.includes("popular")
@@ -16,10 +26,17 @@ const Popular = () => {
           Weekly Picks From Our Most Popular Categories
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+      <div
+        className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+        style={{ minHeight: cardHeight }}
+      >
         {filterPopular.map((ele, index) => (
-          <Link to={`/detail_product/${ele.id}`} key={index}>
-            <div className="flex border bg-white p-4">
+          <Link
+            to={`/detail_product/${ele.id}`}
+            key={index}
+            className="flex flex-col h-full"
+          >
+            <div className="popular-card flex border bg-white p-4 flex-1">
               <div className="w-1/4 pb-8">
                 <img
                   src={hoveredIndex === index ? ele.img2 : ele.img}
