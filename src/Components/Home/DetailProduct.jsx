@@ -11,7 +11,6 @@ const DetailProduct = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-
   const handleColorClick = (color) => {
     setSelectedColor(color);
   };
@@ -36,10 +35,10 @@ const DetailProduct = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row px-4 lg:px-16  bg-neutral-100">
+      <div className="flex flex-col lg:flex-row px-4 lg:px-16 bg-neutral-100">
         <div className="flex flex-col gap-5 bg-white lg:w-1/2 p-4">
           <section className="flex gap-4">
-            <div className="flex flex-col  space-y-4">
+            <div className="flex flex-col space-y-4">
               {productDetail.images.map((ele, index) => (
                 <div key={index} className="w-16">
                   <img
@@ -106,22 +105,23 @@ const DetailProduct = () => {
                 ))}
               </select>
             </div>
-            <div className="space-x-5">
-              <button className="text-white bg-secondery py-2.5 lg:px-24">
+            <div className="flex space-x-5">
+              <button className="text-white bg-secondery py-2.5 px-8 lg:px-24">
                 Add to Cart
               </button>
-              <button className="text-white bg-primary py-2.5 lg:px-24 ">
+              <button className="text-white bg-primary py-2.5 px-8 lg:px-24">
                 Buy it now
               </button>
             </div>
           </div>
         </div>
       </div>
+
       <div className="bg-neutral-100">
         <p className="text-neutral-500 text-center py-16 text-xl font-medium">
           YOU MAY ALSO LIKE
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 px-16 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 px-4 lg:px-16 gap-5">
           {data.slice(5, 11).map((ele, index) => (
             <Link to={`/detail_product/${ele.id}`} key={index}>
               <div className="border bg-white p-4 flex flex-col h-full">
@@ -129,7 +129,7 @@ const DetailProduct = () => {
                   <img
                     src={hoveredIndex === index ? ele.img2 : ele.img}
                     alt={ele.title}
-                    className="w-48 h-48 object-cover"
+                    className="w-full h-48 object-cover"
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   />
@@ -158,10 +158,10 @@ const DetailProduct = () => {
           ))}
         </div>
 
-        <p className="text-primary px-16 pb-10 pt-20 text-xl font-medium">
+        <p className="text-primary px-4 lg:px-16 pb-10 pt-20 text-xl font-medium">
           Recently viewed
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 px-16 gap-5 pb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 px-4 lg:px-16 gap-5 pb-5">
           {data.slice(15, 21).map((ele, index) => (
             <Link to={`/detail_product/${ele.id}`} key={index}>
               <div className="border bg-white p-4 flex flex-col h-full">
@@ -169,7 +169,7 @@ const DetailProduct = () => {
                   <img
                     src={hoveredIndex === index ? ele.img2 : ele.img}
                     alt={ele.title}
-                    className="w-48 h-48 object-cover"
+                    className="w-full h-48 object-cover"
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   />
@@ -180,8 +180,8 @@ const DetailProduct = () => {
                 <p className="text-primary font-medium text-[14px]">
                   {ele.title}
                 </p>
-                <div className="flex items-center gap-5 pt-3 flex-grow">
-                  <div className="flex items-center gap-5">
+                <div className="flex-grow flex flex-col justify-between pt-3">
+                  <div className="flex items-center gap-3">
                     <p className="text-red-500 text-lg font-medium">
                       Rs.{ele.price}
                     </p>
@@ -189,10 +189,10 @@ const DetailProduct = () => {
                       Rs.{ele.delprice}
                     </p>
                   </div>
+                  <button className="text-white bg-secondery py-2">
+                    Add to cart
+                  </button>
                 </div>
-                <button className="text-white bg-secondery py-2 flex-grow-0">
-                  Add to cart
-                </button>
               </div>
             </Link>
           ))}

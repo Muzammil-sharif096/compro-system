@@ -20,7 +20,7 @@ const Popular = () => {
   );
 
   return (
-    <div className="bg-neutral-100 px-16 py-8">
+    <div className="bg-neutral-100 lg:px-16 px-2 py-8">
       <div className="flex justify-between items-center mb-8">
         <p className="font-medium text-xl text-primary">
           Weekly Picks From Our Most Popular Categories

@@ -29,7 +29,7 @@ const ProductDay = () => {
   };
 
   return (
-    <div className="bg-neutral-100 px-16 py-8">
+    <div className="bg-neutral-100 lg:px-16 px-2 py-8">
       <div className="flex justify-between items-center mb-8">
         <p className="font-medium text-xl text-primary">Product of the day</p>
         <p className="text-secondary text-sm font-medium tracking-wide cursor-pointer hover:underline">
