@@ -14,6 +14,8 @@ import Terms from './Components/Terms/Terms';
 import Shipping from './Components/Shipping/Shipping';
 import DetailProduct from './Components/Home/DetailProduct';
 import AllItems from './Components/AllItems/AllItems';
+import Cart from './Components/Cart/Cart';
+import Checkout from './Components/Checkout/Checkout';
 function App() {
   return (
     <>
@@ -31,6 +33,8 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/shipping" element={<Shipping />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </>

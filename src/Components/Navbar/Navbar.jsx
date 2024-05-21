@@ -196,8 +196,8 @@ export default function Navbar() {
               )}
             </div>
             <div className=' md:flex gap-6 items-center xl:w-[9%] w-[20%] pl-10 xl:pl-0  hidden  '>
-              <FiShoppingCart className=' text-white text-2xl' />
-              <h2 className=' text-white text-[17px] font-medium'> Cart</h2>
+              <Link to='/cart'><FiShoppingCart className=' text-white text-2xl' /></Link>
+              <h2 className=' text-white text-[17px] font-medium'><Link to='/cart'>Cart</Link></h2>
             </div>
 
 
