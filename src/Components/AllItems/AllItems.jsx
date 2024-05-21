@@ -240,7 +240,12 @@ const AllItems = () => {
                                                         >
                                                             {(index === 3 || index === 9) ? "Add To Cart" : (index === 6 || index === 12) ? "Choose Option" : "Sold out"}
                                                         </button>
-                                                        <button className='lg:w-40 w-full hover:bg-gray-100 font-bold text-sm border text-secondery p-2'>Quick view</button>
+                                                        <button
+                                                            onClick={() => {
+                                                                setShowDiv1(true);
+                                                                setSelectedProduct(ele);
+                                                            }}
+                                                            className='lg:w-40 w-full hover:bg-gray-100 font-bold text-sm border text-secondery p-2'>Quick view</button>
                                                     </div>
                                                 </div>
                                             </>
@@ -301,13 +306,13 @@ const AllItems = () => {
             {
                 showDiv1 && selectedProduct && (
                     <div className='bg-gray-800 bg-opacity-50 fixed inset-0 flex items-center justify-center'>
-                        <div className='bg-white p-12 relative flex flex-col justify-evenly gap-12 md:flex-row'>
+                        <div className='bg-white p-16 rounded-md relative flex flex-col justify-evenly gap-12 md:flex-row'>
                             <div className='flex justify-between gap-4'>
-                                <div className=''>
+                                <div className='space-y-3'>
                                     {selectedProduct.images.map((image, index) => (
                                         <img
                                             key={index}
-                                            className='w-12 md:w-16 cursor-pointer'
+                                            className='w-16 md:w-16 cursor-pointer'
                                             src={image}
                                             alt=""
                                             onClick={() => setSelectedProduct({ ...selectedProduct, img: image })}
@@ -346,7 +351,7 @@ const AllItems = () => {
                                     </div>
                                     <button className='bg-silver w-52 md:w-60 p-2 text-white font-bold'>Sold out</button>
                                 </div>
-                                <div className='absolute top-2 text-2xl font-bold right-6 cursor-pointer' onClick={() => setShowDiv1(false)}>X</div>
+                                <div className='absolute top-4 text-2xl font-bold right-6 cursor-pointer' onClick={() => setShowDiv1(false)}><FaTimes /></div>
                             </div>
                         </div>
                     </div>
