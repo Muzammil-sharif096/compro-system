@@ -4,6 +4,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoWifi } from "react-icons/io5";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function Blogs() {
   const [isBottomModalOpen, setIsBottomModalOpen] = useState(false);
@@ -68,6 +69,7 @@ export default function Blogs() {
     </div>
     <div className=' grid grid-cols-4 gap-10 '>
       <div className='  col-span-4 lg:col-span-3 md:col-span-4  gap-6  grid md:grid-cols-2 grid-cols-1 pb-10 lg:flex  md:flow-row lg:flex-col  overflow-hidden'>
+        <Link to='/blogdetail'>
         <div className='  group  space-y-3 '>
           <div className=' overflow-hidden'>
         <img src="img/Screenshot 2024-05-17 120743.png" alt="" className=' cursor-pointer  group-hover:scale-110 transition-transform duration-1000' />
@@ -85,7 +87,9 @@ export default function Blogs() {
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Oct 25, 2021</p>
         </div>
         </div>
+        </Link>
         <div className='  lg:pt-10   overflow-hidden'>
+          <Link to='/blogdetail2'>
         <div className='  group   lg:w-2/4 w-full space-y-3 '>
           <div className=' overflow-hidden'>
         <img src="img/Screenshot 2024-05-17 120838.png" alt="" className=' cursor-pointer  group-hover:scale-110 transition-transform duration-1000' />
@@ -103,6 +107,7 @@ export default function Blogs() {
         <p  className= ' text-[#677279] sm:text-sm text-[12px]'>Oct 07, 2021</p>
         </div>
         </div>
+        </Link>
       </div>
       </div>
       <div className='  hidden lg:block'>
