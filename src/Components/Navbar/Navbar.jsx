@@ -14,8 +14,8 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import {FiPhoneCall} from 'react-icons/fi'
-import {MdOutlineMedicalInformation} from 'react-icons/md'
+import { FiPhoneCall } from 'react-icons/fi'
+import { MdOutlineMedicalInformation } from 'react-icons/md'
 import data from '../../Data';
 
 export default function Navbar() {
@@ -170,7 +170,7 @@ export default function Navbar() {
                         </div>
                         <ul className="  space-y-3 w-60 pl-5   pt-5 cursor-pointer">
                           <li onClick={() => { navigate(`/allitems/${'Routers'}`) }} className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
-                          <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
+                          <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals </li>
                           <li onClick={() => { navigate(`/allitems/${'WireLessAirBurds'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
                           <li onClick={() => { navigate(`/allitems/${'HeadPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
                           <li onClick={() => { navigate(`/allitems/${'EarPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
@@ -243,7 +243,7 @@ export default function Navbar() {
               )}
             </div>
             <div className='    lg:w-[70%] sm:w-[60%] w-[40%]     flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
-              <input onClick={() => setIsModalOpen(true)} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
+              <input onMouseDown={(e) => { e.preventDefault(); setIsModalOpen(true); }} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 sm:flex justify-center hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-3xl text-white    ' />
               </button>
@@ -315,9 +315,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <div className=' md:flex gap-6 items-center xl:w-[9%] w-[20%] pl-10 xl:pl-0  hidden  '>
+            <div className=' flex gap-6 items-center xl:w-[9%] w-[20%] pl-5 xl:pl-0  '>
               <FiShoppingCart className=' text-white text-2xl' />
-              <h2 className=' text-white text-[17px] font-medium'> Cart</h2>
+              <h2 className=' text-white text-[17px] font-medium hidden md:block'> Cart</h2>
             </div>
 
 
@@ -328,11 +328,28 @@ export default function Navbar() {
                 <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer py-2'>Home</li>
 
               </Link>
-              <li className=" group py-2 ">
+              <li className="group py-2 ">
                 <span className=" cursor-pointer   text-[#677279] hover:text-[#00badb] duration-300 flex items-center gap-2  ">Categories <FaAngleDown /></span>
                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-60 p-6 cursor-pointer">
                   <li onClick={() => navigate(`/allitems/${'Routers'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
+                  <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer flex gap-5 items-center group/inner">
+                    Computer Peripherals <FaAngleRight />
+                    <div className="absolute hidden group-hover/inner:block left-full top-12 w-48 bg-white shadow-lg border  rounded-sm" >
+                      <ul className="p-3 space-y-1  group-hover:block" >
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Speaker</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Mouse</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Keyboard</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Accessories</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Printer & Scanners</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Storage Drives</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Microphone</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Webcam</li>
+
+
+                      </ul>
+                    </div>
+                  </li>
+
                   <li onClick={() => navigate(`/allitems/${'WireLessAirBurds'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
                   <li onClick={() => navigate(`/allitems/${`HeadPhone`}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
                   <li onClick={() => navigate(`/allitems/${'EarPhone'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>

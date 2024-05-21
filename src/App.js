@@ -14,6 +14,8 @@ import Terms from './Components/Terms/Terms';
 import Shipping from './Components/Shipping/Shipping';
 import DetailProduct from './Components/Home/DetailProduct';
 import AllItems from './Components/AllItems/AllItems';
+import Blogdetail from './Components/Blogdetail/Blogdetail';
+import Blogdetail2 from './Components/Blogdetail2/Blogdetail2';
 function App() {
   return (
     <>
@@ -31,6 +33,8 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/shipping" element={<Shipping />} />
+        <Route path="/blogdetail" element={<Blogdetail />} />
+        <Route path="/blogdetail2" element={<Blogdetail2 />}/>
       </Routes>
       <Footer />
     </>
