@@ -29,43 +29,47 @@ const Cart = () => {
 
     return (
         <div className='bg-[#f3f5f6] space-y-5 p-6 md:p-12'>
-            <div className='xl:px-52 px-6 space-y-3'>
-                <h1 className='text-primary text-3xl font-semibold'>My cart</h1>
-                <p className='text-sm text-silver'>You are eligible for free shipping!</p>
-            </div>
-            <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
-                <div className='p-5 space-y-4 bg-white w-full lg:w-auto'>
-                    <div className='flex text-sm font-semibold text-gray-500 justify-between'>
-                        <div>
-                            <h1>Products</h1>
+            <div className='flex flex-col lg:flex-row  items-center justify-center gap-4'>
+                <div>
+                    <div className='space-y-4 w-full lg:w-auto'>
+                        <div className='space-y-3'>
+                            <h1 className='text-primary text-3xl font-semibold'>My cart</h1>
+                            <p className='text-sm text-silver'>You are eligible for free shipping!</p>
                         </div>
-                        <div className='flex gap-4 md:gap-28'>
-                            <h2>Quantity</h2>
-                            <h3>Total</h3>
-                        </div>
-                    </div>
-                    <hr />
-                    <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-20'>
-                        <div className='flex gap-4 lg:gap-6 items-center'>
-                            <img className='w-20 md:w-28 object-cover' src={product.image} alt="Lenovo" />
-                            <div className='pt-2 space-y-2'>
-                                <h1 className='text-sm text-gray-500'>{product.brand}</h1>
-                                <h1 className='text-sm text-primary'>{product.title}</h1>
-                                <div className='flex items-center gap-4'>
-                                    <h1 className='text-sm text-red-500 font-bold'>Rs.{product.itemPrice}</h1>
-                                    <h2 className='line-through text-gray-500 text-sm'>Rs. 10000</h2>
+                        <div className='p-5 space-y-5 bg-white'>
+                            <div className='flex  text-sm font-semibold text-gray-500 justify-between'>
+                                <div>
+                                    <h1>Products</h1>
+                                </div>
+                                <div className='flex gap-4 md:gap-28'>
+                                    <h2>Quantity</h2>
+                                    <h3>Total</h3>
                                 </div>
                             </div>
+                            <hr />
+                            <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-20'>
+                                <div className='flex gap-4 lg:gap-6 items-center'>
+                                    <img className='w-20 md:w-28 object-cover' src={product.image} alt="Lenovo" />
+                                    <div className='pt-2 space-y-2'>
+                                        <h1 className='text-sm text-gray-500'>{product.brand}</h1>
+                                        <h1 className='text-sm text-primary'>{product.title}</h1>
+                                        <div className='flex items-center gap-4'>
+                                            <h1 className='text-sm text-red-500 font-bold'>Rs.{product.itemPrice}</h1>
+                                            <h2 className='line-through text-gray-500 text-sm'>Rs. 10000</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='flex items-center  md:w-28 w-full font-semibold justify-between px-3 py-1.5 border-2'>
+                                    <button onClick={decrementQuantity}><TiMinus /></button>
+                                    <span>{product.quantity}</span>
+                                    <button onClick={incrementQuantity}><TiPlus /></button>
+                                </div>
+                                <h1 className='text-sm text-gray-500 font-bold'>Rs. {total}</h1>
+                            </div>
                         </div>
-                        <div className='flex items-center  md:w-28 w-full font-semibold justify-between px-3 py-1.5 border-2'>
-                            <button onClick={decrementQuantity}><TiMinus /></button>
-                            <span>{product.quantity}</span>
-                            <button onClick={incrementQuantity}><TiPlus /></button>
-                        </div>
-                        <h1 className='text-sm text-gray-500 font-bold'>Rs. {total}</h1>
                     </div>
                 </div>
-                <div className='bg-white w-full lg:w-96 p-8 space-y-4'>
+                <div className='bg-white w-full lg:w-96 p-10 mt-20'>
                     <div className='flex justify-between'>
                         <h1 className='text-primary text-lg font-bold'>Total</h1>
                         <h2 className='text-lg text-primary font-bold'>Rs. {total}</h2>

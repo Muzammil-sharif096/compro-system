@@ -308,7 +308,7 @@ const AllItems = () => {
             {
                 showDiv1 && selectedProduct && (
                     <div className='bg-gray-800 bg-opacity-50 fixed inset-0 flex items-center justify-center'>
-                        <div className='bg-white p-16 rounded-md relative flex flex-col justify-evenly gap-12 md:flex-row'>
+                        <div className='bg-white lg:w-[60%] w-full p-16 rounded-md relative flex flex-col justify-evenly gap-12 md:flex-row'>
                             <div className='flex justify-between gap-4'>
                                 <div className='space-y-3'>
                                     {selectedProduct.images.map((image, index) => (
