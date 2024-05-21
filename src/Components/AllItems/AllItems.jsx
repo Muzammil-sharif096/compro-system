@@ -462,7 +462,7 @@ const AllItems = () => {
                                 </button>
                             </div>
                             <div
-                                className="absolute top-2 text-2xl font-bold right-6 cursor-pointer"
+                                className="absolute top-5 text-2xl font-bold right-6 cursor-pointer"
                                 onClick={() => setShowDiv1(false)}
                             >
                                 <FaTimes />
