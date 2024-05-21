@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { TiMinus, TiPlus } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import data from '../../Data';
 const Cart = () => {
-
+    const [hoveredIndex, setHoveredIndex] = useState(null);
     const [product, setProduct] = useState(
         {
             image: "../assets/img/lenevoimg1.webp",
@@ -69,9 +70,54 @@ const Cart = () => {
                     <Link to='/checkout' state={product} ><button className='w-full mt-5 bg-secondery font-bold text-white p-4'>CheckOut</button></Link>
                 </div>
             </div>
+            <div className='xl:py-12 xl:px-40 p-2 mt-24 space-y-5'>
+                <h1 className='text-primary text-2xl font-semibold'>Recently viewed</h1>
+                <div className='flex flex-col lg:flex-row justify-center border'>
+                    {
+                        data.slice(59, 65).map((ele, index) => (
+                            <div key={index} className='2xl:w-72 bg-white w-full flex flex-col justify-between border p-4'>
+                                <div>
+                                    <Link to={`/detail_product/${ele.id}`}>
+                                        <img onMouseEnter={() => setHoveredIndex(index)}
+                                            onMouseLeave={() => setHoveredIndex(null)} className='w-full object-cover' src={hoveredIndex === index ? ele.img2 : ele.img} alt={ele.title} />
+                                    </Link>
+                                    <div className='pt-5 space-y-2 cursor-pointer'>
+                                        <h2 className='text-sm text-silver'>{ele.brand}</h2>
+                                        <h2 className='text-base text-primary hover:text-secondery  font-semibold'>{ele.title}</h2>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col gap-3 space-y-2 justify-center'>
+                                    {
+                                        (index === 5 || index === 8 || index === 2 || index === 14) && (
+                                            <div className='mt-2 flex gap-2'>
+                                                <div className='w-6 h-6 bg-yellow-500'></div>
+                                                <div className='w-6 h-6 bg-black'></div>
+                                                <div className='w-6 h-6 bg-green-500'></div>
+                                                <div className='w-6 h-6 bg-blue-500'></div>
+                                            </div>
+                                        )
+                                    }
+                                    <div className='flex gap-2 items-center'>
+                                        <p className={`text-lg font-medium ${index === 3 || index === 7 || index === 9 || index === 13
+                                            ? "text-red-500"
+                                            : "text-cyan-500"
+                                            }`}>Rs. {ele.price}</p>
+                                        <p className='text-base  line-through text-silver'>{ele.delprice}</p>
+                                    </div>
+                                    <button
+                                        className={`w-full p-3 font-bold text-white text-sm ${(index === 3 || index === 9 || index === 2 || index === 5) ? 'bg-secondery' : 'bg-silver'
+                                            }`}
+                                    >
+                                        {(index === 3 || index === 9) ? "Add To Cart" : (index === 2 || index === 5) ? "Choose Option" : "Sold out"}
+                                    </button>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </div>
     );
 }
 
 export default Cart;
-    
