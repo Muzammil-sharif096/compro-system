@@ -6,6 +6,9 @@ const Wiwu = () => {
   const wiwu = data.filter((items) => items.brand === "WIWU");
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <div>
       <div className="bg-neutral-100 py-10 lg:px-16 px-2">
@@ -17,7 +20,13 @@ const Wiwu = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           {wiwu.map((ele, index) => (
-            <Link to={`/detail_product/${ele.id}`} key={index}>
+            <Link
+              to={`/detail-product/${ele.title
+                .toLowerCase()
+                .replace(/[\s:]+/g, "-")}`}
+              key={index}
+              onClick={scrollTop}
+            >
               <div className="border bg-white p-4 flex flex-col justify-between h-full">
                 <div className="flex justify-center mb-4">
                   <img

@@ -80,7 +80,7 @@ export default function Footer() {
                 <div className=' grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-8 sm:pb-12 '>
                     <div className='  space-y-4'>
                         <h2 className=' text-[#1b48ab] text-base font-medium' >ABOUT US</h2>
-                        <div className=' text-[#677279] text-base  space-y-2'>
+                        <div className=' text-[#677279]  text-sm   font-normal  space-y-2'>
                             <p>Compro System brings you premium top brands</p>
                             <p>from across the world providing latest Tech</p>
                             <p>accessories that fit your lifestyle. We're</p>
@@ -93,7 +93,7 @@ export default function Footer() {
                     </div>
                     <div className=' space-y-4'>
                         <h2 className=' text-[#1b48ab] text-base font-medium'>QUICK LINKS</h2>
-                        <ul className='  flex flex-col  gap-3'>
+                        <ul className='  flex flex-col  gap-2'>
                             <li onClick={() => navigate(`/allitems/${'AllProducts'}`)} className='  text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>All Products</li>
                             <Link to='/trackorder'>
                                 <li className=' text-[#677279] text-base hover:text-[#00badb] duration-300 cursor-pointer '>Track Order</li>

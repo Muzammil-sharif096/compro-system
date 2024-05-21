@@ -18,6 +18,8 @@ const Popular = () => {
   const filterPopular = data.filter((item) =>
     item.category.includes("popular")
   );
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 
   return (
     <div className="bg-neutral-100 lg:px-16 px-2 py-8">
@@ -32,9 +34,12 @@ const Popular = () => {
       >
         {filterPopular.map((ele, index) => (
           <Link
-            to={`/detail_product/${ele.id}`}
+            to={`/detail-product/${ele.title
+              .toLowerCase()
+              .replace(/[\s:]+/g, "-")}`}
             key={index}
             className="flex flex-col h-full"
+            onClick={scrollTop}
           >
             <div className="popular-card flex border bg-white p-4 flex-1">
               <div className="w-1/4 pb-8">

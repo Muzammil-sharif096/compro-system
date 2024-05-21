@@ -13,6 +13,7 @@ const AllItems = () => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+
   console.log(selectedProduct);
   let categoryText = "";
   switch (category) {
@@ -39,6 +40,9 @@ const AllItems = () => {
     default:
       break;
   }
+
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 
   return (
     <div className="bg-[#f3f5f6] py-12 p-2">
@@ -154,7 +158,12 @@ const AllItems = () => {
                     className="2xl:w-72 w-full flex flex-col justify-between border p-4"
                   >
                     <div>
-                      <Link to={`/detail_product/${ele.id}`}>
+                      <Link
+                        to={`/detail-product/${ele.title
+                          .toLowerCase()
+                          .replace(/[\s:]+/g, "-")}`}
+                          onClick={scrollTop}
+                      >
                         <img
                           onMouseEnter={() => setHoveredIndex(index)}
                           onMouseLeave={() => setHoveredIndex(null)}
@@ -320,7 +329,13 @@ const AllItems = () => {
               className="2xl:w-72 bg-white w-full flex flex-col justify-between border p-4"
             >
               <div>
-                <Link to={`/detail_product/${ele.id}`}>
+                <Link
+                  to={`/detail-product/${ele.title
+                    .toLowerCase()
+                    .replace(/[\s:]+/g, "-")}`
+                }
+                onClick={scrollTop}
+                >
                   <img
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}

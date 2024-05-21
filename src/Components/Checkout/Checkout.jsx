@@ -12,6 +12,8 @@ const Schema = yup.object().shape({
     City: yup.string().required(),
     Postal: yup.string().required(),
     Phone: yup.number().required(),
+    contactMethod: yup.string().required("Please select a contact method"),
+    updatesConsent: yup.string().required("Please select an option for order updates"),
 });
 
 const Checkout = () => {
@@ -54,15 +56,22 @@ const Checkout = () => {
                                 <p className="text-red-500">⚠ {errors.Email.message}</p>
                             )}
                             <div className='flex gap-2'>
-                                <input type="radio" name="" id="" />
-                                <h1 className='text-sm'>Get order updates on WhatsApp and/or SMS</h1>
+                                <input type="radio" value="email" {...register("contactMethod")} />
+                                <h1 className='text-sm'>Get order updates via Email</h1>
                             </div>
+                            <div className='flex gap-2'>
+                                <input type="radio" value="whatsapp" {...register("contactMethod")} />
+                                <h1 className='text-sm'>Get order updates via WhatsApp</h1>
+                            </div>
+                            {errors.contactMethod && (
+                                <p className="text-red-500">⚠ {errors.contactMethod.message}</p>
+                            )}
                         </div>
                         <div className='space-y-5 mt-6'>
                             <label className='block font-semibold text-xl' htmlFor="">Delivery</label>
                             <div
-                                class="flex justify-end border border-silver p-3 rounded-md">
-                                <select id="Pcatagory" class="border-none outline-none text-sm  w-full ">
+                                className="flex justify-end border border-silver p-3 rounded-md">
+                                <select id="Pcatagory" className="border-none outline-none text-sm  w-full ">
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="India">India</option>
                                     <option value="Saudia">Saudia</option>
@@ -117,13 +126,16 @@ const Checkout = () => {
                                 <p className="text-red-500">⚠ {errors.Phone.message}</p>
                             )}
                             <div className='flex gap-2'>
-                                <input type="radio" name="" id="" />
+                                <input type="radio" value="yes" {...register("updatesConsent")} />
                                 <h1 className='text-sm'>Save this information for next time</h1>
                             </div>
                             <div className='flex gap-2'>
-                                <input type="radio" name="" id="" />
-                                <h1 className='text-sm'>Text me with news and offers</h1>
+                                <input type="radio" value="no" {...register("updatesConsent")} />
+                                <h1 className='text-sm'>Do not save this information</h1>
                             </div>
+                            {errors.updatesConsent && (
+                                <p className="text-red-500">⚠ {errors.updatesConsent.message}</p>
+                            )}
                             <div className='space-y-3'>
                                 <label className='block font-semibold text-xl' htmlFor="">Shipping method</label>
                                 <div className='text-black p-3 bg-indigo-100 w-full outline-none rounded-md border border-silver text-sm'>Free Shipping</div>
@@ -132,22 +144,22 @@ const Checkout = () => {
                                 <label className='block font-semibold text-xl' htmlFor="">Payment</label>
                                 <label className='block  text-sm text-silver' htmlFor="">All transactions are secure and encrypted.</label>
                                 <div className='text-black p-3 flex gap-3 bg-indigo-100 w-full outline-none rounded-md border border-silver text-sm'>
-                                    <input type="radio" name="" id="" />
+                                    <input type="radio" name="paymentMethod" value="cod" {...register("paymentMethod")} />
                                     <h1>Cash On Delivery</h1>
                                 </div>
                                 <div className='text-black p-3 flex gap-3  w-full outline-none rounded-md border border-silver text-sm'>
-                                    <input type="radio" name="" id="" />
+                                    <input type="radio" name="paymentMethod" value="jazzcash" {...register("paymentMethod")} />
                                     <h1>Jazz Cash</h1>
                                 </div>
                             </div>
                             <div className='space-y-3'>
                                 <label className='block font-semibold text-xl' htmlFor="">Billing address</label>
                                 <div className='text-black p-3 flex gap-3 bg-indigo-100 w-full outline-none rounded-md border border-silver text-sm'>
-                                    <input type="radio" name="" id="" />
+                                    <input type="radio" name="billingAddress" value="same" {...register("billingAddress")} />
                                     <h1>Same as shipping address</h1>
                                 </div>
                                 <div className='text-black p-3 flex gap-3  w-full outline-none rounded-md border border-silver text-sm'>
-                                    <input type="radio" name="" id="" />
+                                    <input type="radio" name="billingAddress" value="different" {...register("billingAddress")} />
                                     <h1>Use a different billing address</h1>
                                 </div>
                                 <button
@@ -186,4 +198,4 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+export default Checkout;

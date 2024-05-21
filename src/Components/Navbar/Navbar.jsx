@@ -14,6 +14,9 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { FiPhoneCall } from 'react-icons/fi'
+import { MdOutlineMedicalInformation } from 'react-icons/md'
+import data from '../../Data';
 
 export default function Navbar() {
   const [isCenterModalOpen, setIsCenterModalOpen] = useState(false);
@@ -22,6 +25,41 @@ export default function Navbar() {
   const [modalClass, setModalClass] = useState('modal-initial');
   const [isRightModalOpen, setIsRightModalOpen] = useState(false);
   const [rightModalClass, setRightModalClass] = useState('right-modal-initial');
+
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchItem = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    if (value === '') {
+      setFilteredData([]);
+    } else {
+      const filteredData = data.filter((item) =>
+        item.title.toLowerCase().includes(value)
+      ).slice(0, 5);
+      setFilteredData(filteredData);
+    }
+  };
+
+  const handleFocus = () => {
+    if (searchTerm) {
+      setFilteredData(data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm)
+      ).slice(0, 5)); // Take only the first 5 matching products
+    }
+  };
+
+  const handleBlur = () => {
+    setTimeout(() => {
+      setFilteredData([]);
+      setSearchTerm('');
+    }, 100);
+  };;
+
+
+
 
   useEffect(() => {
     if (isRightModalOpen) {
@@ -132,7 +170,7 @@ export default function Navbar() {
                         </div>
                         <ul className="  space-y-3 w-60 pl-5   pt-5 cursor-pointer">
                           <li onClick={() => { navigate(`/allitems/${'Routers'}`) }} className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
-                          <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
+                          <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals </li>
                           <li onClick={() => { navigate(`/allitems/${'WireLessAirBurds'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
                           <li onClick={() => { navigate(`/allitems/${'HeadPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
                           <li onClick={() => { navigate(`/allitems/${'EarPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
@@ -149,28 +187,63 @@ export default function Navbar() {
                     <li>About Us</li>
                     <li>Contact</li>
                   </ul>
+
+                  <div className=' space-y-3 pt-10 pb-6'>
+                    <h2 className=' text-base font-semibold text-[#1b48ab] '>NEED HELP?</h2>
+                    <div className=' flex gap-2 items-center'>
+                      <FiPhoneCall className=' text-[#1b48ab] text-2xl' />
+                      <p className=' text-[#677279]  text-lg'>Call us 03164466401</p>
+                    </div>
+                    <div className=' flex gap-2 items-center'>
+                      <MdOutlineMedicalInformation className=' text-[#1b48ab] text-2xl' />
+                      <p className=' text-[#677279]  text-lg'>info.ujamshaid@gmail.com</p>
+                    </div>
+                  </div>
+
+
                   <div className="space-y-3 mt-6">
-                    <h2 className='text-[#677279] text-base'>Follow Us</h2>
-                    <div className='flex gap-3'>
-                      <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-blue-700 duration-300 flex justify-center items-center text-white'>
-                        <FaFacebookF />
+                    <h2 className='text-lg font-medium text-[#1b48ab]'>Follow Us</h2>
+                    <div className=' space-y-4'>
+                      <div className=' flex gap-3 items-center'>
+                        <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-blue-700 duration-300 flex justify-center items-center text-white'>
+                          <FaFacebookF />
+
+                        </div>
+                        <p className=' text-[#677279]  text-lg'>Facebook</p>
                       </div>
-                      <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-pink-700 duration-300 flex justify-center items-center text-white'>
-                        <FaInstagram />
+                      <div className=' flex gap-3 items-center'>
+
+                        <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-pink-700 duration-300 flex justify-center items-center text-white'>
+                          <FaInstagram />
+                        </div>
+                        <p className=' text-[#677279]  text-lg'>Instagram</p>
+
                       </div>
-                      <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-red-600 duration-300 flex justify-center items-center text-white'>
-                        <FaYoutube />
+
+                      <div className=' flex gap-3 items-center'>
+
+                        <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-red-600 duration-300 flex justify-center items-center text-white'>
+                          <FaYoutube />
+                        </div>
+                        <p className=' text-[#677279]  text-lg'>Youtube</p>
+
                       </div>
-                      <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-blue-500 duration-300 flex justify-center items-center text-white'>
-                        <FaLinkedinIn />
+
+                      <div className=' flex gap-3 items-center'>
+
+                        <div className='h-8 w-8 rounded-full bg-gray-400 cursor-pointer hover:bg-blue-500 duration-300 flex justify-center items-center text-white'>
+                          <FaLinkedinIn />
+                        </div>
+                        <p className=' text-[#677279]  text-lg'>Linkedin</p>
                       </div>
+
                     </div>
                   </div>
                 </div>
               )}
             </div>
             <div className='    lg:w-[70%] sm:w-[60%] w-[40%]     flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
-              <input onClick={() => setIsModalOpen(true)} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
+              <input onMouseDown={(e) => { e.preventDefault(); setIsModalOpen(true); }} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 sm:flex justify-center hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-3xl text-white    ' />
               </button>
@@ -182,7 +255,54 @@ export default function Navbar() {
                   <div className={`bg-white w-full fixed top-0 left-0 p-2 shadow-lg transition-transform duration-300 ${modalClass}`}>
                     <div className="flex justify-center">
                       <div className="flex items-center w-full  lg:max-w-3xl  sm:px-24 px-8 lg:px-0">
-                        <input type="text" className="flex-grow p-2 border-2 border-gray-300 rounded placeholder:text-black" placeholder="What are you looking for?" />
+                        <input onChange={handleSearchItem} value={searchTerm} onFocus={handleFocus} onBlur={handleBlur} type="text" className="flex-grow p-2 focus:outline-none border-2 border-gray-300 rounded placeholder:text-black" placeholder="What are you looking for?" />
+
+                        {/* Search products */}
+
+                        {filteredData.length > 0 && (
+                          <div className="absolute left-1/2 transform -translate-x-1/2  top-16 grid grid-cols-1 md:grid-cols-4 bg-white shadow-lg z-50 rounded-md border border-gray-300 w-11/12 md:w-4/5 lg:w-3/5 p-4">
+                            {/* Headings */}
+                            <div className="md:col-span-1 md:border-r-2 border-gray-200">
+                              <div className="space-y-4 pb-6">
+                                <h2 className="text-lg font-bold text-gray-700 mb-2">Popular searches</h2>
+                                <p className="text-sm text-[#677279] cursor-pointer">lenovo</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">headphones</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">laptop</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">mouse</p>
+                              </div>
+                              <div className='space-y-4'>
+                                <h2 className="text-lg text-gray-700 font-bold mb-2">Collections</h2>
+                                <p className="text-sm text-[#677279] cursor-pointer">Logitech</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">Laptop Stands</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">LDNIO Online Store</p>
+                                <p className="text-sm text-[#677279] cursor-pointer">MT-LINK Routers</p>
+                              </div>
+                            </div>
+                            {/* Products */}
+                            <div className="md:col-span-3">
+                              <div className='text-center pb-1 pt-7 md:pt-0'>
+                                <h2 className='text-base font-bold text-gray-700'>Here are your results</h2>
+                              </div>
+                              <div className='flex flex-wrap justify-center overflow-auto  max-h-96'>
+                                {filteredData.map((ele, index) => (
+                                  <div key={index} className="p-4 flex flex-col gap-1 cursor-pointer items-center  w-40">
+                                    <img className="" src={ele.img} alt={ele.title} />
+                                    <div className="text-center space-y-1">
+                                      <h1 className="text-[10px] text-[#677279]">Title: {ele.title}</h1>
+                                      <p className="text-sm font-bold tracking-wider text-black">
+                                        <span className='text-[#677279] text-[10px]'>
+                                          <del className='text-[#677279] font-bold'>6000</del>
+                                        </span>
+                                        Rs:{ele.price}
+                                      </p>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
                         <button
                           className="ml-4 text-gray-400 text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white  duration-500  rounded-full"
                           onClick={() => setIsModalOpen(false)}
@@ -202,17 +322,34 @@ export default function Navbar() {
 
 
           </div>
-          <div className='bg-white  pl-14 py-2  font-normal text-base '>
+          <div className='bg-white  pl-14 py-2   hidden lg:block  font-normal text-base '>
             <ul className=' lg:flex gap-11 hidden' >
               <Link to='/'>
                 <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer py-2'>Home</li>
 
               </Link>
-              <li className="relative group py-2 ">
+              <li className="group py-2 ">
                 <span className=" cursor-pointer   text-[#677279] hover:text-[#00badb] duration-300 flex items-center gap-2  ">Categories <FaAngleDown /></span>
                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-60 p-6 cursor-pointer">
                   <li onClick={() => navigate(`/allitems/${'Routers'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
-                  <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals</li>
+                  <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer flex gap-5 items-center group/inner">
+                    Computer Peripherals <FaAngleRight />
+                    <div className="absolute hidden group-hover/inner:block left-full top-12 w-48 bg-white shadow-lg border  rounded-sm" >
+                      <ul className="p-3 space-y-1  group-hover:block" >
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Speaker</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Mouse</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Keyboard</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Accessories</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Printer & Scanners</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Storage Drives</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Microphone</li>
+                        <li className="text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer p-1">Webcam</li>
+
+
+                      </ul>
+                    </div>
+                  </li>
+
                   <li onClick={() => navigate(`/allitems/${'WireLessAirBurds'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
                   <li onClick={() => navigate(`/allitems/${`HeadPhone`}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
                   <li onClick={() => navigate(`/allitems/${'EarPhone'}`)} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Earphones & Neckbands</li>
@@ -223,7 +360,8 @@ export default function Navbar() {
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Graphic Tablets</li>
                 </ul>
               </li>
-              <li className="relative group py-2">
+
+              <li className=" group py-2">
                 <span className=" cursor-pointer  text-[#677279] hover:text-[#00badb] duration-300 flex items-center gap-2">Gaming <FaAngleDown /></span>
                 <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-48 p-6">
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Gamepads</li>
@@ -238,9 +376,10 @@ export default function Navbar() {
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Gaming Headphones</li>
                 </ul>
               </li>
-              <li className="relative group py-2">
-                <span className="   text-[#677279] hover:text-[#00badb] duration-300  cursor-pointer flex items-center gap-2">Brands <FaAngleDown /></span>
-                <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block  space-y-3 w-40 p-6">
+
+              <li className=" group  py-2">
+                <span className="   text-[#677279] hover:text-[#00badb] duration-300  cursor-pointer  -z-40 flex items-center gap-2">Brands <FaAngleDown /></span>
+                <ul className="absolute hidden bg-white rounded-md shadow-md mt-2 group-hover:block   space-y-3 w-40 p-6">
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>TP LINK</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>TENDA</li>
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>MT-LINK</li>
