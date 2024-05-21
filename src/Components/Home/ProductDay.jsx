@@ -45,7 +45,7 @@ const ProductDay = () => {
                 key={index}
                 src={image}
                 alt={`Product image ${index + 2}`}
-                className="w-20 lg:w-full cursor-pointer"
+                className="w-10 sm:w-20  lg:w-full cursor-pointer"
                 onMouseEnter={() => setHoveredIndex(index + 1)}
                 onMouseLeave={() => setHoveredIndex(null)}
               />
