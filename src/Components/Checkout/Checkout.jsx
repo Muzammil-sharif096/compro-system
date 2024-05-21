@@ -54,7 +54,7 @@ const Checkout = () => {
                                 <p className="text-red-500">⚠ {errors.Email.message}</p>
                             )}
                             <div className='flex gap-2'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="radio" name="" id="" />
                                 <h1 className='text-sm'>Get order updates on WhatsApp and/or SMS</h1>
                             </div>
                         </div>
@@ -117,11 +117,11 @@ const Checkout = () => {
                                 <p className="text-red-500">⚠ {errors.Phone.message}</p>
                             )}
                             <div className='flex gap-2'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="radio" name="" id="" />
                                 <h1 className='text-sm'>Save this information for next time</h1>
                             </div>
                             <div className='flex gap-2'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="radio" name="" id="" />
                                 <h1 className='text-sm'>Text me with news and offers</h1>
                             </div>
                             <div className='space-y-3'>
