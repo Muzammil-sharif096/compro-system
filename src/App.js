@@ -16,6 +16,11 @@ import DetailProduct from './Components/Home/DetailProduct';
 import AllItems from './Components/AllItems/AllItems';
 import Blogdetail from './Components/Blogdetail/Blogdetail';
 import Blogdetail2 from './Components/Blogdetail2/Blogdetail2';
+import Cart from './Components/Cart/Cart';
+import Checkout from './Components/Checkout/Checkout';
+
+
+
 function App() {
   return (
     <>
@@ -35,6 +40,10 @@ function App() {
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/blogdetail" element={<Blogdetail />} />
         <Route path="/blogdetail2" element={<Blogdetail2 />}/>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+      
+      
       </Routes>
       <Footer />
     </>

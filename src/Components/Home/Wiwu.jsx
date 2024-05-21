@@ -8,7 +8,7 @@ const Wiwu = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
     <div>
-      <div className="bg-neutral-100 py-10 px-16">
+      <div className="bg-neutral-100 py-10 lg:px-16 px-2">
         <div className="flex justify-between items-center mb-8">
           <p className="font-medium text-xl text-primary">WIWU</p>
           <p className="text-secondary text-sm font-medium tracking-wide cursor-pointer hover:underline">

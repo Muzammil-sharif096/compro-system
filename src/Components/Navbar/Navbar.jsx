@@ -16,6 +16,7 @@ import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { FiPhoneCall } from 'react-icons/fi'
 import { MdOutlineMedicalInformation } from 'react-icons/md'
+import { IoIosClose } from "react-icons/io";
 import data from '../../Data';
 
 export default function Navbar() {
@@ -107,6 +108,10 @@ export default function Navbar() {
 
   const navigate = useNavigate()
 
+  const nextpage = () => {
+    setIsCenterModalOpen(false)
+  }
+
 
   return (
     <>
@@ -116,15 +121,19 @@ export default function Navbar() {
             <p className='  sm:text-[15px] text-sm  font-bold text-white'>Free shipping on all orders above Rs.1000</p>
           </div>
           <div className=' bg-[#1b48ab]  flex  md:justify-between  py-3 pb-5 pt-5  gap-4 md:gap-0  px-3 sm:px-0 '>
-            <div className='  lg:w-[20%] sm:w-[35%] w-[60%] flex gap-1 justify-center sm:pl-4 pl-6'>
+            <div className='  lg:w-[20%] sm:w-[35%] w-[60%] flex gap-1 justify-center items-center sm:pl-4 pl-2'>
               <button onClick={() => setIsCenterModalOpen(!isCenterModalOpen)} className='  lg:hidden xl:hidden h-12 text-3xl sm:flex flex  sm:justify-center sm:items-center  md:flex justify-center items-center w-14  text-white'>
                 {isCenterModalOpen ? <AiOutlineClose /> : <GiHamburgerMenu />}
               </button>
-              <img src="/img/COMPRO_SYSTEM_1_a5d24fe7-ecb5-4662-954f-f1ea3897469e_200x.png" alt="" />
+              <Link to='/'>
+                <img src="/img/COMPRO_SYSTEM_1_a5d24fe7-ecb5-4662-954f-f1ea3897469e_200x.png" alt="" />
+              </Link>
               {isCenterModalOpen && (
                 <div className={`fixed top-28 left-0 right-0 bottom-0 bg-white p-6 shadow-lg overflow-y-auto ${centerModalClass}`}>
                   <ul className="text-[#677279] text-lg space-y-4">
-                    <li>Home</li>
+                    <Link to='/'>
+                    <li onClick={nextpage}>Home</li>
+                    </Link>
                     <div className=' flex items-center justify-between ' onClick={() => setIsRightModalOpen(true)}>
                       <li>Categories</li>
                       <button className=" text-[#677279] text-xl  font-normal"  >
@@ -168,8 +177,8 @@ export default function Navbar() {
 
                           <button onClick={handleBackClick} className=" text-[#677279] text-lg flex items-center gap-2"   ><FaAngleLeft /> Back </button>
                         </div>
-                        <ul className="  space-y-3 w-60 pl-5   pt-5 cursor-pointer">
-                          <li onClick={() => { navigate(`/allitems/${'Routers'}`) }} className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
+                        <ul onClick={nextpage} className="  space-y-3 w-60 pl-5   pt-5 cursor-pointer">
+                          <li  onClick={() => { navigate(`/allitems/${'Routers'}`) }} className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer' >Routers</li>
                           <li className='  text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Computer Peripherals </li>
                           <li onClick={() => { navigate(`/allitems/${'WireLessAirBurds'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Wireless Earbuds (TWS)</li>
                           <li onClick={() => { navigate(`/allitems/${'HeadPhone'}`) }} className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>Headphones</li>
@@ -182,10 +191,27 @@ export default function Navbar() {
                         </ul>
                       </div>
                     )}
-                    <li>Blogs</li>
-                    <li>Track Order</li>
-                    <li>About Us</li>
-                    <li>Contact</li>
+                    <div className=' flex flex-col gap-4'>
+                    <Link to='/blog'>
+
+                      <li onClick={nextpage}>Blogs</li>
+                    </Link>
+                    <Link to='/trackorder'>
+
+                      <li onClick={nextpage}>Track Order</li>
+                    </Link>
+
+                    <Link to='/aboutus'>
+
+                      <li onClick={nextpage}>About Us</li>
+                    </Link>
+
+                    <Link to='/contact'>
+
+                      <li onClick={nextpage}>Contact</li>
+                    </Link>
+                    </div>
+
                   </ul>
 
                   <div className=' space-y-3 pt-10 pb-6'>
@@ -242,7 +268,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <div className='    lg:w-[70%] sm:w-[60%] w-[40%]     flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
+            <div className='    lg:w-[70%] sm:w-[60%] w-[10%]      flex  justify-end sm:justify-start  items-center px-2 sm:px-0 '>
               <input onMouseDown={(e) => { e.preventDefault(); setIsModalOpen(true); }} type="text" name="" id="" placeholder='search...' className=' h-11  rounded-l-sm w-[91%]  outline-none pl-3 placeholder:text-[#677279] hidden sm:block' />
               <button onClick={() => setIsModalOpen(true)} className=' sm:bg-[#00badb] h-11 w-14 sm:flex justify-center hidden items-center '>
                 <FiSearch className='  sm:text-2xl text-3xl text-white    ' />
@@ -251,10 +277,10 @@ export default function Navbar() {
                 <FiSearch className='  sm:text-2xl text-2xl text-white    ' />
               </button>
               {isModalOpen && (
-                <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-start">
-                  <div className={`bg-white w-full fixed top-0 left-0 p-2 shadow-lg transition-transform duration-300 ${modalClass}`}>
-                    <div className="flex justify-center">
-                      <div className="flex items-center w-full  lg:max-w-3xl  sm:px-24 px-8 lg:px-0">
+                <div className="fixed inset-0 bg-gray-800 bg-opacity-50  z-50 flex justify-center items-start">
+                  <div className={`bg-white w-full fixed top-0 left-0 p-2 shadow-lg transition-transform   duration-300 ${modalClass}`}>
+                    <div className="flex justify-center ">
+                      <div className="flex items-center  w-full  lg:max-w-3xl  sm:px-24 px-8 lg:px-0">
                         <input onChange={handleSearchItem} value={searchTerm} onFocus={handleFocus} onBlur={handleBlur} type="text" className="flex-grow p-2 focus:outline-none border-2 border-gray-300 rounded placeholder:text-black" placeholder="What are you looking for?" />
 
                         {/* Search products */}
@@ -286,9 +312,9 @@ export default function Navbar() {
                               <div className='flex flex-wrap justify-center overflow-auto  max-h-96'>
                                 {filteredData.map((ele, index) => (
                                   <div key={index} className="p-4 flex flex-col gap-1 cursor-pointer items-center  w-40">
-                                    
+
                                     <Link to={`/detail_product/${ele.id}`}>
-                                    <img className="" src={ele.img} alt={ele.title} />
+                                      <img className="" src={ele.img} alt={ele.title} />
                                     </Link>
                                     <div className="text-center space-y-1">
                                       <h1 className="text-[10px] text-[#677279]">Title: {ele.title}</h1>
@@ -310,7 +336,7 @@ export default function Navbar() {
                           className="ml-4 text-gray-400 text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white  duration-500  rounded-full"
                           onClick={() => setIsModalOpen(false)}
                         >
-                          &times;
+                          <IoIosClose />
                         </button>
                       </div>
                     </div>
@@ -318,9 +344,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <div className=' flex gap-6 items-center xl:w-[9%] w-[20%] pl-5 xl:pl-0  '>
-              <FiShoppingCart className=' text-white text-2xl' />
-              <h2 className=' text-white text-[17px] font-medium  hidden  md:block'> Cart</h2>
+            <div className=' md:flex gap-6 items-center pt-3 xl:w-[9%] md:w-[20%] sm:w-[10%] w-10 md:pl-10 pl-1 xl:pl-0   '>
+              <Link to='/cart'><FiShoppingCart className=' text-white text-2xl' /></Link>
+              <h2 className=' text-white text-[17px] hidden md:block font-medium'><Link to='/cart'>Cart</Link></h2>
             </div>
 
 
@@ -403,6 +429,7 @@ export default function Navbar() {
                   <li className=' text-[#677279] hover:text-[#00badb] duration-300 cursor-pointer'>AL-HARAMEEN</li>
                 </ul>
               </li>
+            
               <Link to='/blog'>
                 <li className=' text-[#677279] hover:text-[#00badb] py-2 duration-300 cursor-pointer'>Blogs</li>
               </Link>
@@ -415,6 +442,7 @@ export default function Navbar() {
               <Link to='/contact'>
                 <li className=' text-[#677279] hover:text-[#00badb] py-2 duration-300 cursor-pointer'>Contact</li>
               </Link>
+              
             </ul>
           </div>
         </div>
