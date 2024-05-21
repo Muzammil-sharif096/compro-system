@@ -29,7 +29,7 @@ const ProductDay = () => {
   };
 
   return (
-    <div className="bg-neutral-100 lg:px-16 px-2 py-8">
+    <div className="bg-neutral-100 lg:px-16 px-4 py-8">
       <div className="flex justify-between items-center mb-8">
         <p className="font-medium text-xl text-primary">Product of the day</p>
         <p className="text-secondary text-sm font-medium tracking-wide cursor-pointer hover:underline">
@@ -39,19 +39,19 @@ const ProductDay = () => {
 
       <div className="grid lg:grid-cols-2 grid-cols-1 bg-white">
         <div className="grid lg:grid-cols-4 grid-cols-1 gap-4">
-          <div className="px-10 py-4 col-span-1 flex flex-col space-y-4">
+          <div className="px-4 py-4 lg:py-0 col-span-1 flex lg:flex-col flex-row lg:space-y-4 space-x-4 lg:space-x-0">
             {proDay.images.slice(1).map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt={`Product image ${index + 2}`}
-                className="w-full cursor-pointer"
+                className="w-20 lg:w-full cursor-pointer"
                 onMouseEnter={() => setHoveredIndex(index + 1)}
                 onMouseLeave={() => setHoveredIndex(null)}
               />
             ))}
           </div>
-          <div className="border-r col-span-3">
+          <div className="border-r col-span-3 flex justify-center items-center">
             <img
               src={
                 hoveredIndex !== null ? proDay.images[hoveredIndex] : proDay.img
@@ -61,10 +61,10 @@ const ProductDay = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col space-y-4">
-          <div className="flex flex-col space-y-4  p-5 items-start">
-            <div className=" pb-7 border-b">
-              <h2 className="text-[25px] font-semibold text-primary">
+        <div className="flex flex-col space-y-4 p-5">
+          <div className="flex flex-col space-y-4 items-start">
+            <div className="pb-7 border-b">
+              <h2 className="text-[20px] lg:text-[25px] font-semibold text-primary">
                 {proDay.title}
               </h2>
             </div>
@@ -83,7 +83,6 @@ const ProductDay = () => {
                     cursor: "pointer",
                   }}
                   onClick={() => handleColorClick("Blue")}
-                  // className="inline"
                 ></div>
                 <div
                   style={{
@@ -93,24 +92,20 @@ const ProductDay = () => {
                     cursor: "pointer",
                   }}
                   onClick={() => handleColorClick("Green")}
-                  className=""
                 ></div>
               </div>
-              {/* <p>Selected color: {selectedColor}</p> */}
             </div>
 
             <div className="flex items-center space-x-4">
               <p className="text-red-500 font-medium text-2xl">
-                <span className="text-primary text-sm font-medium ">
-                  Price:
-                </span>{" "}
+                <span className="text-primary text-sm font-medium">Price:</span>{" "}
                 Rs {proDay.price}
               </p>
               <p className="text-gray-500 text-lg line-through">
                 Rs.{proDay.delprice}
               </p>
             </div>
-            <button className="bg-secondary text-white bg-secondery font-medium  py-2.5 lg:px-24">
+            <button className="bg-secondary text-white bg-secondery font-medium py-2.5 lg:px-24 w-full lg:w-auto">
               Add to Cart
             </button>
           </div>

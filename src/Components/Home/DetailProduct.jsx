@@ -5,8 +5,10 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const DetailProduct = () => {
-  const { id } = useParams();
-  const productDetail = data.find((item) => item.id == id);
+  const { title } = useParams();
+  const productDetail = data.find(
+    (item) => item.title.toLowerCase().replace(/[\s:]+/g, "-") == title
+  );
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -18,6 +20,9 @@ const DetailProduct = () => {
   const handleQuantityChange = (event) => {
     setQuantity(event.target.value);
   };
+
+  // const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 
   return (
     <>

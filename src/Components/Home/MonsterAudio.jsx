@@ -7,6 +7,8 @@ const MonsterAudio = () => {
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <>
       <div className="bg-neutral-100 lg:px-16 px-2 py-8">
@@ -20,7 +22,13 @@ const MonsterAudio = () => {
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {Monster.map((ele, index) => (
-            <Link to={`/detail_product/${ele.id}`} key={index}>
+            <Link
+              to={`/detail-product/${ele.title
+                .toLowerCase()
+                .replace(/[\s:]+/g, "-")}`}
+              key={index}
+              onClick={scrollTop}
+            >
               <div className="flex border bg-white p-4">
                 <div className="w-1/4 pb-8">
                   <img
