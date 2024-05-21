@@ -28,7 +28,11 @@ const Cart = () => {
     console.log(product, "test");
 
     return (
-        <div className='bg-[#f3f5f6] p-6 md:p-12'>
+        <div className='bg-[#f3f5f6] space-y-5 p-6 md:p-12'>
+            <div className='xl:px-52 px-6 space-y-3'>
+                <h1 className='text-primary text-3xl font-semibold'>My cart</h1>
+                <p className='text-sm text-silver'>You are eligible for free shipping!</p>
+            </div>
             <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
                 <div className='p-5 space-y-4 bg-white w-full lg:w-auto'>
                     <div className='flex text-sm font-semibold text-gray-500 justify-between'>

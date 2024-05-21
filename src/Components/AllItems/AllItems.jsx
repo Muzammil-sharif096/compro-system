@@ -219,8 +219,10 @@ const AllItems = () => {
                                             <>
                                                 <div className='flex flex-col lg:flex-row border justify-between lg:gap-16 gap-2 p-4 cursor-pointer px-3 items-center'>
                                                     <div className='flex flex-col lg:w-fit w-full  lg:flex-row justify-center  items-center lg:gap-6 gap-2 lg:p-4 p-2'>
-                                                        <img onMouseEnter={() => setHoveredIndex(index)}
-                                                            onMouseLeave={() => setHoveredIndex(null)} className='lg:w-60 w-full object-cover' src={hoveredIndex === index ? ele.img2 : ele.img} alt={ele.title} />
+                                                        <Link to={`/detail_product/${ele.id}`}>
+                                                            <img onMouseEnter={() => setHoveredIndex(index)}
+                                                                onMouseLeave={() => setHoveredIndex(null)} className='lg:w-60 w-full object-cover' src={hoveredIndex === index ? ele.img2 : ele.img} alt={ele.title} />
+                                                        </Link>
                                                         <div className='space-y-3 lg:w-fit w-full'>
                                                             <h2 className='text-sm text-silver'>{ele.brand}</h2>
                                                             <h2 className='text-base text-primary hover:text-secondery  font-semibold'>{ele.title}</h2>
