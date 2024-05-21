@@ -3,13 +3,13 @@ import data from "../../Data";
 import { Link } from "react-router-dom";
 
 const MonsterAudio = () => {
-  const Monster = data.filter((items) => items.brand == "MONSTER");
+  const Monster = data.filter((items) => items.brand =="MONSTER");
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <>
-      <div className="bg-neutral-100 px-16 py-8">
+      <div className="bg-neutral-100 lg:px-16 px-2 py-8">
         <div className="flex justify-between items-center mb-8">
           <p className="font-medium text-xl text-primary">
             Monster Audio Store

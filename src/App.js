@@ -14,8 +14,13 @@ import Terms from './Components/Terms/Terms';
 import Shipping from './Components/Shipping/Shipping';
 import DetailProduct from './Components/Home/DetailProduct';
 import AllItems from './Components/AllItems/AllItems';
+<<<<<<< HEAD
 import Blogdetail from './Components/Blogdetail/Blogdetail';
 import Blogdetail2 from './Components/Blogdetail2/Blogdetail2';
+=======
+import Cart from './Components/Cart/Cart';
+import Checkout from './Components/Checkout/Checkout';
+>>>>>>> 875f5969f2d9c2d9943da153f344f3099510ed68
 function App() {
   return (
     <>
@@ -33,8 +38,13 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/shipping" element={<Shipping />} />
+<<<<<<< HEAD
         <Route path="/blogdetail" element={<Blogdetail />} />
         <Route path="/blogdetail2" element={<Blogdetail2 />}/>
+=======
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+>>>>>>> 875f5969f2d9c2d9943da153f344f3099510ed68
       </Routes>
       <Footer />
     </>

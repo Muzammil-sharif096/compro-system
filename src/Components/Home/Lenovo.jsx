@@ -13,7 +13,7 @@ const Lenovo = () => {
         <img src="/assets/img/sportlight.webp" alt="" className="w-full" />
       </div>
 
-      <div className="bg-neutral-100  px-16 py-10">
+      <div className="bg-neutral-100  lg:px-16 px-5 py-10">
         <p className="font-medium text-xl text-primary">Top Brands</p>
         <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 pt-6">
           <div className="bg-white px-10 border py-7">
@@ -37,7 +37,7 @@ const Lenovo = () => {
         </div>
       </div>
 
-      <div className="bg-neutral-100  py-10  px-16">
+      <div className="bg-neutral-100  py-10  lg:px-16 px-2">
         <div className="flex justify-between items-center  mb-8">
           <p className="font-medium text-xl text-primary">
             Lenovo Audio Equipment
