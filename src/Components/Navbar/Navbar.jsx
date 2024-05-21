@@ -286,7 +286,10 @@ export default function Navbar() {
                               <div className='flex flex-wrap justify-center overflow-auto  max-h-96'>
                                 {filteredData.map((ele, index) => (
                                   <div key={index} className="p-4 flex flex-col gap-1 cursor-pointer items-center  w-40">
+                                    
+                                    <Link to={`/detail_product/${ele.id}`}>
                                     <img className="" src={ele.img} alt={ele.title} />
+                                    </Link>
                                     <div className="text-center space-y-1">
                                       <h1 className="text-[10px] text-[#677279]">Title: {ele.title}</h1>
                                       <p className="text-sm font-bold tracking-wider text-black">
@@ -317,7 +320,7 @@ export default function Navbar() {
             </div>
             <div className=' flex gap-6 items-center xl:w-[9%] w-[20%] pl-5 xl:pl-0  '>
               <FiShoppingCart className=' text-white text-2xl' />
-              <h2 className=' text-white text-[17px] font-medium hidden md:block'> Cart</h2>
+              <h2 className=' text-white text-[17px] font-medium  hidden  md:block'> Cart</h2>
             </div>
 
 
